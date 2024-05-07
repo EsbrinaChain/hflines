@@ -1,4 +1,5 @@
 export PATH=$PATH:../bin
+sudo chown $(whoami):$(whoami) -R /tmp/hyperledger
 
 echo "Register/enrolls en TLS-CA"
 

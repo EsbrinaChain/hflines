@@ -1,5 +1,6 @@
+# Docker compose para crear la red hflines
 networks:
-  fabric-ca:
+  hflines:
 
 services:
   ca-tls:
@@ -15,7 +16,7 @@ services:
     volumes:
         - /tmp/hyperledger/tls-ca:/tmp/hyperledger/fabric-ca
     networks:
-        - fabric-ca
+        - hflines
     ports:
         - 7052:7052
 
@@ -32,7 +33,7 @@ services:
     volumes:
         - /tmp/hyperledger/org0/ca:/tmp/hyperledger/fabric-ca
     networks:
-        - fabric-ca
+        - hflines
     ports:
         - 7053:7053
 
@@ -49,7 +50,7 @@ services:
     volumes:
         - /tmp/hyperledger/org1/ca:/tmp/hyperledger/fabric-ca
     networks:
-        - fabric-ca
+        - hflines
     ports:
         - 7054:7054
 
@@ -66,7 +67,7 @@ services:
     volumes:
         - /tmp/hyperledger/org2/ca:/tmp/hyperledger/fabric-ca
     networks:
-        - fabric-ca
+        - hflines
     ports:
         - 7055:7055
 
@@ -97,7 +98,7 @@ services:
     ports:
         - 7051:7051
     networks:
-        - fabric-ca
+        - hflines
 
   peer2-org1:
     container_name: peer2-org1
@@ -127,7 +128,7 @@ services:
     ports:
         - 8051:8051      
     networks:
-        - fabric-ca
+        - hflines
 
   peer1-org2:
     container_name: peer1-org2
@@ -156,7 +157,7 @@ services:
     ports:
         - 9051:9051
     networks:
-        - fabric-ca
+        - hflines
 
   peer2-org2:
     container_name: peer2-org2
@@ -186,7 +187,7 @@ services:
     ports:
         - 10051:10051
     networks:
-        - fabric-ca
+        - hflines
 
   orderer1-org0:
     container_name: orderer1-org0
@@ -211,5 +212,5 @@ services:
     ports:
         - 7050:7050
     networks:
-        - fabric-ca
+        - hflines
 

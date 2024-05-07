@@ -210,4 +210,5 @@ cp /tmp/hyperledger/org2/peer1/assets/ca/org2-ca-cert.pem /tmp/hyperledger/org2/
 cp /tmp/hyperledger/org2/peer1/assets/tls-ca/tls-ca-cert.pem /tmp/hyperledger/org2/msp/tlscacerts/
 cp /tmp/hyperledger/org2/admin/msp/signcerts/cert.pem /tmp/hyperledger/org2/msp/admincerts/admin-org2-cert.pem
 cp ./org2-config.yaml /tmp/hyperledger/org2/msp/config.yaml
+echo "Config.yaml generado en msp para org2."
 echo "Org2 finalizada."

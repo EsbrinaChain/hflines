@@ -1,4 +1,4 @@
-echo "Enroll en Orderer"
+echo "Certificados del Orderer1: ca y tls-ca"
 
 # preparación
 mkdir -p /tmp/hyperledger/org0/orderer/assets/ca 
@@ -24,7 +24,7 @@ sleep 5
 
 cp /tmp/hyperledger/org0/orderer/tls-msp/keystore/*_sk /tmp/hyperledger/org0/orderer/tls-msp/keystore/key.pem
 
-echo "Enroll de Admin de org0"
+echo "Certificados para org0: admin generación de msp"
 
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org0/admin
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org0/orderer/assets/ca/org0-ca-cert.pem
@@ -44,10 +44,11 @@ cp /tmp/hyperledger/org0/orderer/assets/ca/org0-ca-cert.pem /tmp/hyperledger/org
 cp /tmp/hyperledger/org0/orderer/assets/tls-ca/tls-ca-cert.pem /tmp/hyperledger/org0/msp/tlscacerts/
 cp /tmp/hyperledger/org0/admin/msp/signcerts/cert.pem /tmp/hyperledger/org0/msp/admincerts/admin-org0-cert.pem
 cp ./org0-config.yaml /tmp/hyperledger/org0/msp/config.yaml
+echo "Config.yaml generado en msp para org0."
 echo "Org0 finalizada."
 sleep 5
 echo 
-echo "Enroll de Peer1 en org1"
+echo "Certificados para Peer1 de org1 - generación del msp"
 
 # preparación
 mkdir -p /tmp/hyperledger/org1/peer1/assets/ca 
@@ -73,7 +74,7 @@ sleep 5
 
 cp /tmp/hyperledger/org1/peer1/tls-msp/keystore/*_sk /tmp/hyperledger/org1/peer1/tls-msp/keystore/key.pem
 
-echo "Enroll de Peer2 de org1"
+echo "Certificados para Peer2 de org1"
 
 # preparación
 mkdir -p /tmp/hyperledger/org1/peer2/assets/ca 
@@ -100,7 +101,7 @@ sleep 5
 cp /tmp/hyperledger/org1/peer2/tls-msp/keystore/*_sk /tmp/hyperledger/org1/peer2/tls-msp/keystore/key.pem
 
 
-echo "Enroll de Admin org1"
+echo "Certificados para Admin de peers de org1"
 
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org1/admin
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org1/peer1/assets/ca/org1-ca-cert.pem
@@ -126,10 +127,11 @@ cp /tmp/hyperledger/org1/peer1/assets/ca/org1-ca-cert.pem /tmp/hyperledger/org1/
 cp /tmp/hyperledger/org1/peer1/assets/tls-ca/tls-ca-cert.pem /tmp/hyperledger/org1/msp/tlscacerts/
 cp /tmp/hyperledger/org1/admin/msp/signcerts/cert.pem /tmp/hyperledger/org1/msp/admincerts/admin-org1-cert.pem
 cp ./org1-config.yaml /tmp/hyperledger/org1/msp/config.yaml
+echo "Config.yaml generado en msp para org1."
 echo "Org1 finalizada."
 sleep 5
 echo 
-echo "Enroll Peer1 de org2"
+echo "Certificados para Peer1 de org2 - tls y ca"
 
 # preparación
 mkdir -p /tmp/hyperledger/org2/peer1/assets/ca 
@@ -140,7 +142,7 @@ cp /tmp/hyperledger/tls-ca/admin/msp/cacerts/0-0-0-0-7052.pem /tmp/hyperledger/o
 
 # para identidades
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org2/peer1
-export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org2/peer1/assets/ca/org2-ca-cert.pem
+export FABRIC_CA_CLIENT_TLS_CERTFILEdoneS=/tmp/hyperledger/org2/peer1/assets/ca/org2-ca-cert.pem
 export FABRIC_CA_CLIENT_MSPDIR=msp
 
 fabric-ca-client enroll -d -u https://peer1-org2:peer1PW@0.0.0.0:7055
@@ -155,7 +157,7 @@ sleep 5
 
 cp /tmp/hyperledger/org2/peer1/tls-msp/keystore/*_sk /tmp/hyperledger/org2/peer1/tls-msp/keystore/key.pem
 
-echo "Enroll Peer2"
+echo "Certificados para Peer2 de org2 - tls y ca"
 
 # preparación
 mkdir -p /tmp/hyperledger/org2/peer2/assets/ca 
@@ -182,7 +184,7 @@ sleep 5
 cp /tmp/hyperledger/org2/peer2/tls-msp/keystore/*_sk /tmp/hyperledger/org2/peer2/tls-msp/keystore/key.pem
 
 
-echo "Enroll Admin de peers de org2"
+echo "Certificados de Admin y peers de org2 generación de sus msp"
 
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org2/admin
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org2/peer1/assets/ca/org2-ca-cert.pem
@@ -208,4 +210,4 @@ cp /tmp/hyperledger/org2/peer1/assets/ca/org2-ca-cert.pem /tmp/hyperledger/org2/
 cp /tmp/hyperledger/org2/peer1/assets/tls-ca/tls-ca-cert.pem /tmp/hyperledger/org2/msp/tlscacerts/
 cp /tmp/hyperledger/org2/admin/msp/signcerts/cert.pem /tmp/hyperledger/org2/msp/admincerts/admin-org2-cert.pem
 cp ./org2-config.yaml /tmp/hyperledger/org2/msp/config.yaml
-echo "Org2 finalizada"
+echo "Org2 finalizada."

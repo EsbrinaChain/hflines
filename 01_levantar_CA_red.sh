@@ -54,5 +54,7 @@ fabric-ca-client register -d --id.name peer2-org2 --id.secret peer2PW --id.type 
 fabric-ca-client register -d --id.name admin-org2 --id.secret org2AdminPW --id.type admin --id.attrs "abac.init=true:ecert" -u https://0.0.0.0:7055
 fabric-ca-client register -d --id.name user-org2 --id.secret org2UserPW --id.type user -u https://0.0.0.0:7055
 
-echo "Todas las CA registradas y usuarios y identidades definidas."
+echo "CA-TLS levantada para comunicaciones TLS seguras."
+echo "Cada CA de cada organización levantada con usuarios admin y componentes de la red definidos."
+echo "Preparados para generar todos los certificados de la red hflines(enrollment)."
 

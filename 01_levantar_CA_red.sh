@@ -3,7 +3,7 @@ export PATH=$PATH:../bin
 docker compose up -d ca-tls rca-org0 rca-org1 rca-org2
 sudo chown esbrinachain:esbrinachain -R /tmp/hyperledger
 
-echo "Working on TLS-CA"
+echo "Register/enrolls en TLS-CA"
 
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/tls-ca/crypto/tls-cert.pem
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/tls-ca/admin
@@ -17,7 +17,7 @@ fabric-ca-client register -d --id.name peer1-org2 --id.secret peer1PW --id.type 
 fabric-ca-client register -d --id.name peer2-org2 --id.secret peer2PW --id.type peer -u https://0.0.0.0:7052
 fabric-ca-client register -d --id.name orderer1-org0 --id.secret ordererPW --id.type orderer -u https://0.0.0.0:7052
 
-echo "Working on RCA-ORG0"
+echo "Register/enrolls en RCA-ORG0"
 
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org0/ca/crypto/ca-cert.pem
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org0/ca/admin
@@ -28,7 +28,7 @@ sleep 5
 fabric-ca-client register -d --id.name orderer1-org0 --id.secret ordererpw --id.type orderer -u https://0.0.0.0:7053
 fabric-ca-client register -d --id.name admin-org0 --id.secret org0adminpw --id.type admin --id.attrs "hf.Registrar.Roles=client,hf.Registrar.Attributes=*,hf.Revoker=true,hf.GenCRL=true,admin=true:ecert,abac.init=true:ecert" -u https://0.0.0.0:7053
 
-echo "Working on RCA-ORG1"
+echo "Register/enrolls en RCA-ORG1"
 
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org1/ca/crypto/ca-cert.pem
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org1/ca/admin
@@ -41,7 +41,7 @@ fabric-ca-client register -d --id.name peer2-org1 --id.secret peer2PW --id.type 
 fabric-ca-client register -d --id.name admin-org1 --id.secret org1AdminPW --id.type admin -u https://0.0.0.0:7054
 fabric-ca-client register -d --id.name user-org1 --id.secret org1UserPW --id.type user -u https://0.0.0.0:7054
 
-echo "Working on RCA-ORG2"
+echo "Register/enrolls en RCA-ORG2"
 
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org2/ca/crypto/ca-cert.pem
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org2/ca/admin
@@ -54,5 +54,5 @@ fabric-ca-client register -d --id.name peer2-org2 --id.secret peer2PW --id.type 
 fabric-ca-client register -d --id.name admin-org2 --id.secret org2AdminPW --id.type admin --id.attrs "abac.init=true:ecert" -u https://0.0.0.0:7055
 fabric-ca-client register -d --id.name user-org2 --id.secret org2UserPW --id.type user -u https://0.0.0.0:7055
 
-echo "All CA and registration done"
+echo "Todas las CA registradas y usuarios y identidades definidas."
 

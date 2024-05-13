@@ -6,4 +6,4 @@ export CORE_PEER_ADDRESS=localhost:7051
 
 export PATH=$PATH:$PWD/../bin/
 
-export FABRIC_CFG_PATH=$PWD/../config/
+

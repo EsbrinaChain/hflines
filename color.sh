@@ -1,0 +1,11 @@
+export BLACK="\033[30m"
+export RED="\033[31m"
+export GREEN="\033[32m"
+export YELLOW="\033[33m"
+export BLUE="\033[34m"
+export PINK="\033[35m"
+export CYAN="\033[36m"
+export WHITE="\033[37m"
+export NORMAL="\033[0m"
+export WHITE_L="\033[0m \033[1m"
+

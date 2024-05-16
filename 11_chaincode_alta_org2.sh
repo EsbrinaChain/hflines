@@ -15,7 +15,7 @@ peer lifecycle chaincode queryinstalled --peerAddresses localhost:9051 \
 
 peer lifecycle chaincode approveformyorg \
     -o localhost:7050 \
-    --ordererTLSHostnameOverride orderer.example.com \
+    --ordererTLSHostnameOverride orderer1-org1 \
     --tls --cafile $ORDERER_CA \
     --channelID mychannel \
     --name chaincode \

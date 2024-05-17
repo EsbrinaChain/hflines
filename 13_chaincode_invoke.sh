@@ -1,5 +1,6 @@
 # Muestra para la ejecución de funciones del chaincode.
 
+source ./term-org1
 peer chaincode invoke \
    -o localhost:7050 \
    --ordererTLSHostnameOverride orderer1-org1 \

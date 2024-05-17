@@ -1,3 +1,4 @@
+export PATH=$PATH:${HOME}/fabric-samples/bin
 ## 00
 # Levantando contenedores de las Entidades Certificadoras CA para Org1 y Org2:
 docker compose up -d ca-tls rca-org1 rca-org2

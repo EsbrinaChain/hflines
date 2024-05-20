@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 volumes:
     prometheus_data: {}
@@ -44,7 +44,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
       # - /cgroup:/cgroup:ro
     ports:
-      - 8080:8080
+      - 8081:8080
     restart: always
 
   node-exporter:
@@ -65,4 +65,4 @@ services:
 networks:
   default:
       external: true
-      name: hflines
+      name: hflines_hflines

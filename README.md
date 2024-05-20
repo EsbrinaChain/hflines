@@ -12,3 +12,6 @@ ${\LARGE\textrm{\color{royalblue}un sistema de auditoria de comunicaciones entre
 <p align='justify'>El uso de la tecnología blockchain permite garantizar a todas las organizaciones el acceso a los datos segun su nivel de acceso y confiar en el mismo por su capacidad de inmutabilidad del registro, siendo una herramienta de confianza para la resolución de conflictos, en la responsabilidad de cada toma de decisiones.</p>
 
 ##### <p align='right'><sup>1</sup> (UTE = Unión Temporal de Empresas).</p>
+<p align='center'>
+![](images/img.png?raw=true)
+</p>p>

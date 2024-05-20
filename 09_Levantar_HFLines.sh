@@ -10,7 +10,7 @@ sudo chown -R $USER /tmp/hyperledger/*
 
 . color.sh
 echo -e $WHITE_L Registrando en $BLUE TLS-CA $NORMAL...
-sleep 2
+sleep 4
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/tls-ca/crypto/tls-cert.pem
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/tls-ca/admin
 
@@ -36,7 +36,7 @@ sleep 2
 fabric-ca-client register -d --id.name admin-org2 --id.secret org2AdminPW --id.type admin -u https://0.0.0.0:7052
 
 echo -e $WHITE_L Registrando en $BLUE RCA-ORG1 $NORMAL.
-
+sleep 4
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org1/ca/crypto/ca-cert.pem
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org1/ca/admin
 
@@ -54,7 +54,7 @@ sleep 2
 fabric-ca-client register -d --id.name admin-org1 --id.secret org1AdminPW --id.type admin -u https://0.0.0.0:7054
 
 echo -e $WHITE_L Registrando en $BLUE RCA-ORG2 $NORMAL...
-sleep 2
+sleep 4
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org2/ca/crypto/ca-cert.pem
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org2/ca/admin
 
@@ -71,14 +71,15 @@ echo -e $WHITE_L Registrando admin-org2 $BLUE en RCA-ORG2 $NORMAL...
 sleep 2
 fabric-ca-client register -d --id.name admin-org2 --id.secret org2AdminPW --id.type admin -u https://0.0.0.0:7055
 echo
-echo -e $WHITE_L Todos los registros para las entidades certificadoras CA en $GREEN HFLINES$BLUE realizados$NORMAL!
+echo -e $WHITE_L Todos los registros para las entidades certificadoras CA en $GREEN HFLINES$BLUE realizados$NORMAL...
 
 ## 01
 . color.sh
 
-echo -e $WHITE_L Emisión de certificados para la organización $GREEN Org1$NORMAL!
-echo -e $WHITE_L Emisión de certificado CA para $GREEN peer1-org1$NORMAL!
-sleep 3
+echo -e $WHITE_L Emisión de certificados para la organización $GREEN Org1$NORMAL...
+sleep 4
+echo -e $WHITE_L Emisión de certificado CA para $GREEN peer1-org1$NORMAL...
+sleep 2
 
 mkdir -p /tmp/hyperledger/org1/peer1/assets/ca 
 cp /tmp/hyperledger/org1/ca/admin/msp/cacerts/0-0-0-0-7054.pem /tmp/hyperledger/org1/peer1/assets/ca/org1-ca-cert.pem
@@ -93,7 +94,7 @@ export FABRIC_CA_CLIENT_MSPDIR=msp
 fabric-ca-client enroll -d -u https://peer1-org1:peer1PW@0.0.0.0:7054
 sleep 5
 
-echo -e $WHITE_L Emisión de certificado TLS para $GREEN peer1-org1$NORMAL!
+echo -e $WHITE_L Emisión de certificado TLS para $GREEN peer1-org1$NORMAL...
 sleep 2
 
 export FABRIC_CA_CLIENT_MSPDIR=tls-msp
@@ -104,7 +105,7 @@ sleep 5
 
 cp /tmp/hyperledger/org1/peer1/tls-msp/keystore/*_sk /tmp/hyperledger/org1/peer1/tls-msp/keystore/key.pem
 
-echo -e $WHITE_L Emisión de certificado CA para $GREEN orderer1-org1$NORMAL!
+echo -e $WHITE_L Emisión de certificado CA para $GREEN orderer1-org1$NORMAL...
 sleep 2
 
 # preparation
@@ -122,7 +123,7 @@ export FABRIC_CA_CLIENT_MSPDIR=msp
 fabric-ca-client enroll -d -u https://orderer1-org1:ordererpw@0.0.0.0:7054
 sleep 5
 
-echo -e $WHITE_L Emisión de certificado TLS para $GREEN orderer1-org1$NORMAL!
+echo -e $WHITE_L Emisión de certificado TLS para $GREEN orderer1-org1$NORMAL...
 sleep 2
 
 # for TLS
@@ -134,7 +135,7 @@ sleep 5
 
 cp /tmp/hyperledger/org1/orderer1/tls-msp/keystore/*_sk /tmp/hyperledger/org1/orderer1/tls-msp/keystore/key.pem
 
-echo -e $WHITE_L Emisión de certificado CA para $GREEN admin-org1$NORMAL!
+echo -e $WHITE_L Emisión de certificado CA para $GREEN admin-org1$NORMAL...
 sleep 2
 
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org1/admin
@@ -143,7 +144,7 @@ export FABRIC_CA_CLIENT_MSPDIR=msp
 
 fabric-ca-client enroll -d -u https://admin-org1:org1AdminPW@0.0.0.0:7054
 
-echo -e $WHITE_L Emisión de certificado TLS para $GREEN admin-org1$NORMAL!
+echo -e $WHITE_L Emisión de certificado TLS para $GREEN admin-org1$NORMAL...
 sleep 2
 export FABRIC_CA_CLIENT_MSPDIR=tls-msp
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org1/peer1/assets/tls-ca/tls-ca-cert.pem
@@ -167,8 +168,8 @@ cp /tmp/hyperledger/org1/admin/msp/signcerts/cert.pem /tmp/hyperledger/org1/msp/
 cp ./org1-config.yaml /tmp/hyperledger/org1/msp/config.yaml
 cp ./org1-config.yaml /tmp/hyperledger/org1/orderer1/msp/config.yaml
 
-echo -e $WHITE_L Emisión de certificados para la organización $GREEN Org2$NORMAL!
-echo -e $WHITE_L Emisión de certificado CA para $GREEN peer1-org2$NORMAL!
+echo -e $WHITE_L Emisión de certificados para la organización $GREEN Org2$NORMAL...
+echo -e $WHITE_L Emisión de certificado CA para $GREEN peer1-org2$NORMAL...
 sleep 3
 
 mkdir -p /tmp/hyperledger/org2/peer1/assets/ca 
@@ -184,7 +185,7 @@ export FABRIC_CA_CLIENT_MSPDIR=msp
 fabric-ca-client enroll -d -u https://peer1-org2:peer1PW@0.0.0.0:7055
 sleep 5
 
-echo -e $WHITE_L Emisión de certificado TLS para $GREEN peer1-org2$NORMAL!
+echo -e $WHITE_L Emisión de certificado TLS para $GREEN peer1-org2$NORMAL...
 sleep 2
 export FABRIC_CA_CLIENT_MSPDIR=tls-msp
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org2/peer1/assets/tls-ca/tls-ca-cert.pem
@@ -194,7 +195,7 @@ sleep 5
 
 cp /tmp/hyperledger/org2/peer1/tls-msp/keystore/*_sk /tmp/hyperledger/org2/peer1/tls-msp/keystore/key.pem
 
-echo -e $WHITE_L Emisión de certificado CA para $GREEN orderer1-org2$NORMAL!
+echo -e $WHITE_L Emisión de certificado CA para $GREEN orderer1-org2$NORMAL...
 sleep 2
 # preparation
 mkdir -p /tmp/hyperledger/org2/orderer1/assets/ca 
@@ -211,7 +212,7 @@ export FABRIC_CA_CLIENT_MSPDIR=msp
 fabric-ca-client enroll -d -u https://orderer1-org2:ordererpw@0.0.0.0:7055
 sleep 5
 
-echo -e $WHITE_L Emisión de certificado TLS para $GREEN orderer1-org2$NORMAL!
+echo -e $WHITE_L Emisión de certificado TLS para $GREEN orderer1-org2$NORMAL...
 sleep 2
 
 # for TLS
@@ -223,7 +224,7 @@ sleep 5
 
 cp /tmp/hyperledger/org2/orderer1/tls-msp/keystore/*_sk /tmp/hyperledger/org2/orderer1/tls-msp/keystore/key.pem
 
-echo -e $WHITE_L Emisión de certificado CA para $GREEN admin-org2$NORMAL!
+echo -e $WHITE_L Emisión de certificado CA para $GREEN admin-org2$NORMAL...
 sleep 2
 
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org2/admin
@@ -232,7 +233,7 @@ export FABRIC_CA_CLIENT_MSPDIR=msp
 
 fabric-ca-client enroll -d -u https://admin-org2:org2AdminPW@0.0.0.0:7055
 
-echo -e $WHITE_L Emisión de certificado TLS para $GREEN admin-org2$NORMAL!
+echo -e $WHITE_L Emisión de certificado TLS para $GREEN admin-org2$NORMAL...
 sleep 2
 
 export FABRIC_CA_CLIENT_MSPDIR=tls-msp
@@ -261,7 +262,7 @@ cp ./org2-config.yaml /tmp/hyperledger/org2/msp/config.yaml
 cp ./org2-config.yaml /tmp/hyperledger/org2/orderer1/msp/config.yaml
 
 echo
-echo -e $WHITE_L Se ha realizado la $GREEN Emisión de certificados CA y TLS para $BLUE todas las organizaciones.$NORMAL!
+echo -e $WHITE_L Se ha realizado la $GREEN Emisión de certificados CA y TLS para $BLUE todas las organizaciones.$NORMAL...
 echo
 
 ## 02
@@ -270,6 +271,7 @@ docker compose up -d
 sleep 5
 echo -e $WHITE_L Arquitectura de contenedores de$BLUE HFLINES $NORMAL:
 docker compose ps --format 'table {{.ID}}\t{{.Name}}\t{{.Status}}\t{{.Ports}}'
+sleep 4
 
 ## 03
 echo -e $WHITE_L Creando bloque génesis para el canal$NORMAL ...
@@ -297,6 +299,7 @@ export CORE_PEER_LOCALMSPID="org1MSP"
 export CORE_PEER_TLS_ROOTCERT_FILE=/tmp/hyperledger/org1/peer1/tls-msp/tlscacerts/tls-0-0-0-0-7052.pem
 export CORE_PEER_MSPCONFIGPATH=/tmp/hyperledger/org1/admin/msp
 export CORE_PEER_ADDRESS=localhost:7051
+export CORE_PEER_ADDRESS_ORG1=localhost:7051
 
 echo -e $WHITE_L Estado actual del canal respecto Org1$NORMAL ...
 sleep 2
@@ -336,6 +339,7 @@ export CORE_PEER_LOCALMSPID="org2MSP"
 export CORE_PEER_TLS_ROOTCERT_FILE=/tmp/hyperledger/org2/peer1/tls-msp/tlscacerts/tls-0-0-0-0-7052.pem
 export CORE_PEER_MSPCONFIGPATH=/tmp/hyperledger/org2/admin/msp
 export CORE_PEER_ADDRESS=localhost:9051
+export CORE_PEER_ADDRESS_ORG2=localhost:9051
 
 
 echo -e $WHITE_L Estado actual del canal respecto Org1$NORMAL ...

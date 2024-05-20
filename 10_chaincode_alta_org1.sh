@@ -1,6 +1,5 @@
 # Muestra del parametro $1 
 # $1=../chaincode/build/install/chaincode/
-# $2=
 
 source ./term-org1
 
@@ -10,9 +9,19 @@ peer lifecycle chaincode package chaincode.tar.gz \
                --label chaincode
 
 peer lifecycle chaincode install chaincode.tar.gz \
-               --peerAddresses $CORE_PEER_ADDRESS \
+               --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
                --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
 
 peer lifecycle chaincode queryinstalled \
-               --peerAddresses $CORE_PEER_ADDRESS \
+               --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
                --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
+
+peer lifecycle chaincode approveformyorg \
+    -o $ORDEDER_ORG1_ADDRESS \
+    --ordererTLSHostnameOverride orderer1-org1 \
+    --tls --cafile $ORDERER_CA \
+    --channelID mychannel \
+    --name chaincode \
+    --version 1.0 \
+    --package-id $1 \
+    --sequence 1

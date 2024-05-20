@@ -12,3 +12,7 @@ export CORE_PEER_LOCALMSPID="org1MSP"
 export CORE_PEER_TLS_ROOTCERT_FILE=/tmp/hyperledger/org1/peer1/tls-msp/tlscacerts/tls-0-0-0-0-7052.pem
 export CORE_PEER_MSPCONFIGPATH=/tmp/hyperledger/org1/admin/msp
 export CORE_PEER_ADDRESS=localhost:7051
+export CORE_PEER_ADDRESS_ORG1=localhost:7051
+export CORE_PEER_ADDRESS_ORG2=localhost:9051
+export ORDEDER_ORG1_ADDRESS=localhost:7050
+export ORDEDER_ORG2_ADDRESS=localhost:8050

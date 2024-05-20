@@ -3,16 +3,6 @@
 
 source ./term-org1
 
-peer lifecycle chaincode approveformyorg -o localhost:7050 \
-                         --ordererTLSHostnameOverride orderer1-org1 \
-                         --tls \
-                         --cafile $ORDERER_CA \
-                         --channelID mychannel \
-                         --name chaincode \
-                         --version 1.0 \
-                         --package-id $1 \
-                         --sequence 1
-
 peer lifecycle chaincode checkcommitreadiness \
         --channelID mychannel \
         --name chaincode \
@@ -20,15 +10,15 @@ peer lifecycle chaincode checkcommitreadiness \
         --sequence 1 \
         --output json 
 
-peer lifecycle chaincode commit -o localhost:7050 \
+peer lifecycle chaincode commit -o $ORDERER_ORG1_ADDRESS \
                                 --ordererTLSHostnameOverride orderer1-org1 \
                                 --tls $CORE_PEER_TLS_ENABLED \
                                 --cafile $ORDERER_CA \
                                 --channelID mychannel \
                                 --name chaincode \
-                                --peerAddresses $CORE_PEER_ADDRESS \
+                                --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
                                 --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
-                                --peerAddresses localhost:9051 \
+                                --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
                                 --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
                                 --version 1.0 \
                                 --sequence 1

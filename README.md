@@ -15,6 +15,6 @@ ${\LARGE\textrm{\color{royalblue}un sistema de auditoria de comunicaciones entre
 
 ![Red HFLines](/img/img.png "HFLines")
 <p align='center'>
-  CA : Autoridad Certificadora.
+  CA : Autoridad Certificadora.<br>
   TLS-CA : Entidad certificadora para el protocolo de transporte TLS. 
 </p>

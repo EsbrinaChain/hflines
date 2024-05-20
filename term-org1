@@ -14,5 +14,5 @@ export CORE_PEER_MSPCONFIGPATH=/tmp/hyperledger/org1/admin/msp
 export CORE_PEER_ADDRESS=localhost:7051
 export CORE_PEER_ADDRESS_ORG1=localhost:7051
 export CORE_PEER_ADDRESS_ORG2=localhost:9051
-export ORDEDER_ORG1_ADDRESS=localhost:7050
-export ORDEDER_ORG2_ADDRESS=localhost:8050
+export ORDERER_ORG1_ADDRESS=localhost:7050
+export ORDERER_ORG2_ADDRESS=localhost:8050

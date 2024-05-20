@@ -17,7 +17,7 @@ peer lifecycle chaincode queryinstalled \
                --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
 
 peer lifecycle chaincode approveformyorg \
-    -o $ORDEDER_ORG1_ADDRESS \
+    -o $ORDERER_ORG1_ADDRESS \
     --ordererTLSHostnameOverride orderer1-org1 \
     --tls --cafile $ORDERER_CA \
     --channelID mychannel \

@@ -22,5 +22,18 @@ peer lifecycle chaincode commit -o $ORDERER_ORG1_ADDRESS \
                                 --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
                                 --version 1.0 \
                                 --sequence 1
+
+peer lifecycle chaincode commit -o localhost:7050 \
+                                --ordererTLSHostnameOverride orderer1-org1 \
+                                --tls $CORE_PEER_TLS_ENABLED \
+                                --cafile $ORDERER_CA \
+                                --channelID mychannel \
+                                --name chaincode \
+                                --peerAddresses localhost:7051 \
+                                --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
+                                --peerAddresses localhost:9051 \
+                                --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
+                                --version 1.0 \
+                                --sequence 1
                                 
 peer lifecycle chaincode querycommitted --channelID mychannel --name chaincode

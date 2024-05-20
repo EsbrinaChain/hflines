@@ -1,3 +1,5 @@
+# Variables de entorno.
+
 export PATH=$PATH:${HOME}/fabric-samples/bin
 export FABRIC_CFG_PATH=${HOME}/fabric-samples/config/
 export ORDERER_CA=/tmp/hyperledger/org2/orderer1/tls-msp/tlscacerts/tls-0-0-0-0-7052.pem

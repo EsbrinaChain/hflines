@@ -261,7 +261,7 @@ cp ./org2-config.yaml /tmp/hyperledger/org2/msp/config.yaml
 cp ./org2-config.yaml /tmp/hyperledger/org2/orderer1/msp/config.yaml
 
 echo
-echo -e $WHITE_L Se ha ha realizado la $GREEN Emisión de certificados CA y TLS para $BLUE todas las organizaciones.$NORMAL!
+echo -e $WHITE_L Se ha realizado la $GREEN Emisión de certificados CA y TLS para $BLUE todas las organizaciones.$NORMAL!
 echo
 
 ## 02

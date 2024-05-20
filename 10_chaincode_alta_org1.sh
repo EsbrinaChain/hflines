@@ -10,9 +10,9 @@ peer lifecycle chaincode package chaincode.tar.gz \
                --label chaincode
 
 peer lifecycle chaincode install chaincode.tar.gz \
-               --peerAddresses localhost:7051 \
+               --peerAddresses $CORE_PEER_ADDRESS \
                --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
 
 peer lifecycle chaincode queryinstalled \
-               --peerAddresses localhost:7051 \
+               --peerAddresses $CORE_PEER_ADDRESS \
                --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE

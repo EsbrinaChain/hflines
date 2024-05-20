@@ -7,10 +7,10 @@
 source ./term-org2
 
 peer lifecycle chaincode install chaincode.tar.gz \
-                         --peerAddresses localhost:9051 \
+                         --peerAddresses $CORE_PEER_ADDRESS \
                          --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
 
-peer lifecycle chaincode queryinstalled --peerAddresses localhost:9051 \
+peer lifecycle chaincode queryinstalled --peerAddresses $CORE_PEER_ADDRESS \
                                         --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
 
 peer lifecycle chaincode approveformyorg \

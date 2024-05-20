@@ -26,7 +26,7 @@ peer lifecycle chaincode commit -o localhost:7050 \
                                 --cafile $ORDERER_CA \
                                 --channelID mychannel \
                                 --name chaincode \
-                                --peerAddresses localhost:7051 \
+                                --peerAddresses $CORE_PEER_ADDRESS \
                                 --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
                                 --peerAddresses localhost:9051 \
                                 --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \

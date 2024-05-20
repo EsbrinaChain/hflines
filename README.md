@@ -13,6 +13,6 @@ ${\LARGE\textrm{\color{royalblue}un sistema de auditoria de comunicaciones entre
 
 ##### <p align='right'><sup>1</sup> (UTE = Unión Temporal de Empresas).</p>
 
-![Red HFLines](/images/img.png "HFLines")
+![Red HFLines](/img/img.png "HFLines")
 <p align='center'>
 </p>

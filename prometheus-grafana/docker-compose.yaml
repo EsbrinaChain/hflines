@@ -44,7 +44,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
       # - /cgroup:/cgroup:ro
     ports:
-      - 8080:8080
+      - 8083:8080
     restart: always
 
   node-exporter:
@@ -65,4 +65,4 @@ services:
 networks:
   default:
       external: true
-      name: fabric_test
+      name: hflines_hflines

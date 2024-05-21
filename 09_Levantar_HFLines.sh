@@ -284,7 +284,7 @@ configtxgen -profile SampleAppChannelEtcdRaft \
 echo -e $WHITE_L Consultando el status del canal$NORMAL ...
 
 osnadmin channel list -o localhost:7080 \
-                      --ca-file $ORDERER_CA \
+                      --ca-file /tmp/hyperledger/org1/orderer1/tls-msp/tlscacerts/tls-0-0-0-0-7052.pem \
                       --client-cert /tmp/hyperledger/org1/admin/tls-msp/signcerts/cert.pem \
                       --client-key /tmp/hyperledger/org1/admin/tls-msp/keystore/key.pem
 

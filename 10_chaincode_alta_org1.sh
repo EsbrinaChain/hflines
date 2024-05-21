@@ -25,3 +25,4 @@ peer lifecycle chaincode approveformyorg \
     --version 1.0 \
     --package-id $1 \
     --sequence 1
+    chaincode:8029661264f62c396e5c8086ff41d46ae9704cdeace463e1a1aebbf3df4c39e6

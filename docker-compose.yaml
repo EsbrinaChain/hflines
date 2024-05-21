@@ -98,6 +98,7 @@ services:
         - /tmp/hyperledger/org1/peer1:/tmp/hyperledger/org1/peer1
     ports:
         - 7051:7051
+        - 9444:9444
     networks:
         - hflines
   couchdb2:
@@ -143,6 +144,7 @@ services:
         - /tmp/hyperledger/org2/peer1:/tmp/hyperledger/org2/peer1
     ports:
         - 9051:9051
+        - 9445:9445
     networks:
         - hflines
 
@@ -180,6 +182,7 @@ services:
     ports:
         - 7050:7050
         - 7080:7080
+        - 9443:9443
     networks:
         - hflines
 
@@ -217,5 +220,6 @@ services:
     ports:
         - 8050:7050
         - 8080:7080
+        - 9446:9446
     networks:
         - hflines

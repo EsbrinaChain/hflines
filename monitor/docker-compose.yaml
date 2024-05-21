@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 volumes:
     prometheus_data: {}
@@ -65,4 +65,4 @@ services:
 networks:
   default:
       external: true
-      name: fabric_test
+      name: hflines_hflines

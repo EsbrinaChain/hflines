@@ -365,7 +365,7 @@ osnadmin channel list -o localhost:8080 \
                       --client-cert /tmp/hyperledger/org2/admin/tls-msp/signcerts/cert.pem \
                       --client-key /tmp/hyperledger/org2/admin/tls-msp/keystore/key.pem
 
-echo -e $WHITE_L Uniendo al canal a peer1-org1$NORMAL ...
+echo -e $WHITE_L Uniendo al canal a peer1-org2$NORMAL ...
 peer channel join -b mychannel.block
 
 echo

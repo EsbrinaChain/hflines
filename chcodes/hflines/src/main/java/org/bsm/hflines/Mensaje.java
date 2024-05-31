@@ -1,40 +1,40 @@
 package org.bsm.hflines;
 
-import com.google.gson.annotations.SerializedName;
+import com.owlike.genson.annotation.JsonProperty;
 import org.hyperledger.fabric.contract.annotation.DataType;
 import org.hyperledger.fabric.contract.annotation.Property;
 
 import java.util.List;
+import java.util.Objects;
 
 @DataType
 public final class Mensaje {
 
     @Property()
-    @SerializedName("id") private final String id;
+    private final String id;
 
     @Property()
-    @SerializedName("emisor") private final String emisor;
+    private final String emisor;
 
     @Property()
-    @SerializedName("destinatarios") private final List<String> destinatarios;
+    private final List<String> destinatarios;
 
     @Property()
-    @SerializedName("subject") private final String subject;
+    private final String subject;
 
     @Property()
-    @SerializedName("texto") private final String texto;
+    private final String texto;
 
-    public Mensaje(final String id,
-                   final String emisor,
-                   final List<String> destinatarios,
-                   final String subject,
-                   final String texto){
+    public Mensaje(@JsonProperty("id") final String id,
+                   @JsonProperty("emisor") final String emisor,
+                   @JsonProperty("subject") final String subject,
+                   @JsonProperty("texto") final String texto,
+                   @JsonProperty("destinarios") final List<String> destinatarios){
         this.id=id;
         this.emisor=emisor;
-        this.destinatarios=destinatarios;
         this.subject=subject;
         this.texto=texto;
-
+        this.destinatarios=destinatarios;
     }
 
     public String getId() { return id; }
@@ -43,5 +43,31 @@ public final class Mensaje {
     public List<String> getDestinatarios() { return destinatarios; }
     public String getTexto() { return texto; }
 
+    @Override
+    public boolean equals(final Object obj) {
+        if (this == obj) {
+            return true;
+        }
 
+        if ((obj == null) || (getClass() != obj.getClass())) {
+            return false;
+        }
+
+        Mensaje other = (Mensaje) obj;
+
+        return Objects.deepEquals(
+                new String[] {getId(), getEmisor(), getSubject(), getTexto(), getDestinatarios().toString()},
+                new String[] {other.getId(), other.getEmisor(), other.getSubject(), other.getTexto(), other.getDestinatarios().toString()});
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getEmisor(), getSubject(),  getTexto(), getDestinatarios().toString());
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + "@" + Integer.toHexString(hashCode()) + " [id=" + id + ", emisor="
+                + emisor + ", subject=" + subject + ", texto=" + texto + ", destinatarios=" + destinatarios + "]";
+    }
 }

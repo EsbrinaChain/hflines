@@ -1,4 +1,4 @@
 package org.bsm.hflines;
 
-public class mensaje {
+public class Mensaje {
 }

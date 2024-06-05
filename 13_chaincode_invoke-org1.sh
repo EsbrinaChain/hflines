@@ -1,7 +1,8 @@
 # Muestra para la ejecución de funciones del chaincode.
 
+source ./color.sh
 source ./term-org1
-. color.sh
+
 echo -e $WHITE_L Registrando Mensaje 1 en $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \
@@ -45,7 +46,7 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["registrarMensaje", "1", "Emisor mensaje 2","Subject mensaje 2", "Contenido texto mensaje 2","destinatario1@mensaje2.com, destinatario2@mensaje2.com, destinatario3@mensaje2.com"]}'
+   -c '{"Args":["registrarMensaje", "2", "Emisor mensaje 2","Subject mensaje 2", "Contenido texto mensaje 2","destinatario1@mensaje2.com, destinatario2@mensaje2.com, destinatario3@mensaje2.com"]}'
 
 echo -e $WHITE_L Imprimiendo mensaje 2 de $BLUE HFLINES $NORMAL
 

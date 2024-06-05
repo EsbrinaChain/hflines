@@ -15,7 +15,9 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["registrarMensaje", "4", "Emisor mensaje 4","Subject mensaje 4", "Contenido texto mensaje 4","destinatario1@mensaje4.com, destinatario2@mensaje4.com, destinatario3@mensaje4.com"]}'
+   -c '{"Args":["registrarMensaje", "4", "Emisor mensaje 4","Subject mensaje 4", "Contenido texto mensaje 4","destinatario1-mensaje4.com, destinatario2-mensaje4.com, destinatario3-mensaje4.com"]}'
+
+sleep 5
 
 echo -e $WHITE_L Imprimiendo mensaje 4 de $BLUE HFLINES $NORMAL
 
@@ -32,6 +34,8 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
    -c '{"Args":["imprimirMensaje", "4"]}'
 
+sleep 5
+
 echo -e $WHITE_L Registrando Mensaje 5 en $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \
@@ -45,7 +49,9 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["registrarMensaje", "5", "Emisor mensaje 5","Subject mensaje 5", "Contenido texto mensaje 5","destinatario1@mensaje5.com, destinatario2@mensaje5.com, destinatario3@mensaje5.com"]}'
+   -c '{"Args":["registrarMensaje", "5", "Emisor mensaje 5","Subject mensaje 5", "Contenido texto mensaje 5","destinatario1-mensaje5.com, destinatario2-mensaje5.com, destinatario3-mensaje5.com"]}'
+
+sleep 5
 
 echo -e $WHITE_L Imprimiendo mensaje 5 de $BLUE HFLINES $NORMAL
 
@@ -62,6 +68,8 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
    -c '{"Args":["imprimirMensaje", "5"]}'
 
+sleep 5
+
 echo -e $WHITE_L Registrando Mensaje 6 en $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \
@@ -75,7 +83,9 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["registrarMensaje", "6", "Emisor mensaje 6","Subject mensaje 6", "Contenido texto mensaje 6","destinatario1@mensaje6.com, destinatario2@mensaje6.com, destinatario3@mensaje6.com"]}'
+   -c '{"Args":["registrarMensaje", "6", "Emisor mensaje 6","Subject mensaje 6", "Contenido texto mensaje 6","destinatario1-mensaje6.com, destinatario2-mensaje6.com, destinatario3-mensaje6.com"]}'
+
+sleep 5
 
 echo -e $WHITE_L Imprimiendo mensaje 6 de $BLUE HFLINES $NORMAL
 
@@ -92,6 +102,8 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
    -c '{"Args":["imprimirMensaje", "6"]}'
 
+sleep 5
+
 echo -e $WHITE_L Borrando mensaje 5 en $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \
@@ -106,6 +118,8 @@ peer chaincode invoke \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
    -c '{"Args":["borrarMensaje", "5"]}'
+
+sleep 5
 
 echo -e $WHITE_L Listando todos los mensajes de $BLUE HFLINES $NORMAL
 

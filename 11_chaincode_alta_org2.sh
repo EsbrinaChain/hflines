@@ -6,7 +6,7 @@
 
 source ./term-org2
 
-peer lifecycle chaincode install chaincode.tar.gz \
+peer lifecycle chaincode install hflines_chaincode.tar.gz \
                          --peerAddresses $CORE_PEER_ADDRESS \
                          --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
 

@@ -3,12 +3,12 @@
 
 source ./term-org1
 
-peer lifecycle chaincode package chaincode.tar.gz \
+peer lifecycle chaincode package hflines_chaincode.tar.gz \
                --path $1 \
                --lang java \
                --label chaincode
 
-peer lifecycle chaincode install chaincode.tar.gz \
+peer lifecycle chaincode install hflines_chaincode.tar.gz \
                --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
                --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
 

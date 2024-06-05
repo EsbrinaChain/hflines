@@ -26,4 +26,4 @@ peer lifecycle chaincode approveformyorg \
     --package-id $1 \
     --sequence 1
     
-    # $1 : chaincode:8029661264f62c396e5c8086ff41d46ae9704cdeace463e1a1aebbf3df4c39e6
+    # $1 : hflines:c2066d1ea51ebe1c70db570860f9e56a064d13283729e43aae2eec04b33212a0

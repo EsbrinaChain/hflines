@@ -34,14 +34,14 @@ public class GestionMensaje implements ContractInterface{
     @Transaction(intent = Transaction.TYPE.SUBMIT)
     public Mensaje registrarMensaje(final Context ctx, final String id,
                                     final String emisor, final String subject,
-                                    final String texto, final List<String> destinatarios) {
+                                    final String texto, final String destinatarios) {
 
         ChaincodeStub stub = ctx.getStub();
 
         String state = stub.getStringState(id);
 
         if (!state.isEmpty()) {
-            String errorMessage = String.format("Mensaje ya registrado", id);
+            String errorMessage = String.format("Mensaje %s ya registrado", id);
             System.out.println(errorMessage);
             throw new ChaincodeException(errorMessage, MensajeErrors.MENSAJE_ALREADY_EXISTS.toString());
         }

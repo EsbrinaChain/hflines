@@ -17,19 +17,19 @@ public final class Mensaje {
     private final String emisor;
 
     @Property()
-    private final List<String> destinatarios;
-
-    @Property()
     private final String subject;
 
     @Property()
     private final String texto;
 
+    @Property()
+    private final String destinatarios;
+
     public Mensaje(@JsonProperty("id") final String id,
                    @JsonProperty("emisor") final String emisor,
                    @JsonProperty("subject") final String subject,
                    @JsonProperty("texto") final String texto,
-                   @JsonProperty("destinarios") final List<String> destinatarios){
+                   @JsonProperty("destinarios") final String destinatarios){
         this.id=id;
         this.emisor=emisor;
         this.subject=subject;
@@ -40,7 +40,7 @@ public final class Mensaje {
     public String getId() { return id; }
     public String getEmisor() { return emisor; }
     public String getSubject() { return subject; }
-    public List<String> getDestinatarios() { return destinatarios; }
+    public String getDestinatarios() { return destinatarios; }
     public String getTexto() { return texto; }
 
     @Override
@@ -56,13 +56,13 @@ public final class Mensaje {
         Mensaje other = (Mensaje) obj;
 
         return Objects.deepEquals(
-                new String[] {getId(), getEmisor(), getSubject(), getTexto(), getDestinatarios().toString()},
-                new String[] {other.getId(), other.getEmisor(), other.getSubject(), other.getTexto(), other.getDestinatarios().toString()});
+                new String[] {getId(), getEmisor(), getSubject(), getTexto(), getDestinatarios()},
+                new String[] {other.getId(), other.getEmisor(), other.getSubject(), other.getTexto(), other.getDestinatarios()});
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getEmisor(), getSubject(),  getTexto(), getDestinatarios().toString());
+        return Objects.hash(getId(), getEmisor(), getSubject(), getTexto(), getDestinatarios());
     }
 
     @Override

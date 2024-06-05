@@ -34,7 +34,7 @@ public class GestionMensaje implements ContractInterface{
     @Transaction(intent = Transaction.TYPE.SUBMIT)
     public Mensaje registrarMensaje(final Context ctx, final String id,
                                     final String emisor, final String subject,
-                                    final String texto, final String destinatarios) {
+                                    final String texto, final String destinat) {
 
         ChaincodeStub stub = ctx.getStub();
 
@@ -46,7 +46,7 @@ public class GestionMensaje implements ContractInterface{
             throw new ChaincodeException(errorMessage, MensajeErrors.MENSAJE_ALREADY_EXISTS.toString());
         }
 
-        Mensaje Mensaje = new Mensaje(id, emisor, subject, texto, destinatarios);
+        Mensaje Mensaje = new Mensaje(id, emisor, subject, texto, destinat);
 
         String newState = genson.serialize(Mensaje);
 

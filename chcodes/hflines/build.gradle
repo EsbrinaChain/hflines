@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.3.0'
-	id 'io.spring.dependency-management' version '1.1.5'
+	id 'org.springframework.boot' version '2.7.17'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'application'
 }
 
@@ -9,37 +9,25 @@ group = 'org.bsm'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '21'
-}
-
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+	sourceCompatibility = '11'
+	targetCompatibility = '11'
 }
 
 repositories {
 	mavenCentral()
+	maven {
+		url 'https://jitpack.io'
+	}
+
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	// https://mvnrepository.com/artifact/org.hyperledger.fabric-chaincode-java/fabric-chaincode-shim
 	implementation 'org.hyperledger.fabric-chaincode-java:fabric-chaincode-shim:2.5.0'
-
-	// https://mvnrepository.com/artifact/org.hyperledger.fabric-chaincode-java/fabric-chaincode-shim
-	//implementation 'org.hyperledger.fabric-chaincode-java:fabric-chaincode-shim:2.5.3'
-
 	// https://mvnrepository.com/artifact/com.owlike/genson
-	implementation 'com.owlike:genson:1.6'
-
-	// https://mvnrepository.com/artifact/com.google.code.gson/gson
-	//implementation 'com.google.code.gson:gson:2.11.0'
-
+	implementation 'com.owlike:genson:1.5'
 }
 
 tasks.named('test') {

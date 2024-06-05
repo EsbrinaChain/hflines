@@ -1,7 +1,7 @@
 # Muestra para la ejecución de funciones del chaincode.
 
 source ./term-org2
-
+. color.sh
 echo -e $WHITE_L Registrando Mensaje 4 en $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \

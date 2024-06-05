@@ -6,7 +6,7 @@ ruta_install=./chcodes/hflines_ch1/build/install/hflines_ch1
 source ./term-org1
 
 peer lifecycle chaincode package hflines_chaincode.tar.gz \
-               --path ruta_install \
+               --path $ruta_install \
                --lang java \
                --label chaincode
 

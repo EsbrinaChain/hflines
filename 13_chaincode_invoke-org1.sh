@@ -17,7 +17,7 @@ peer chaincode invoke \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
    -c '{"Args":["registrarMensaje", "1", "Emisor mensaje 1","Subject mensaje 1", "Contenido texto mensaje 1","destinatario1@mensaje1.com, destinatario2@mensaje1.com, destinatario3@mensaje1.com"]}'
-   -c '{"Args":["registrarJamon", "1", "Iberico","Bellota","Dehesa de Extremadura","Dehesa de Extremadura", "50"]}'
+   
 sleep 5
 
 echo -e $WHITE_L Imprimiendo mensaje 1 de $BLUE HFLINES $NORMAL

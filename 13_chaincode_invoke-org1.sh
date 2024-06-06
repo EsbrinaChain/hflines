@@ -3,7 +3,7 @@
 . color.sh
 source ./term-org1
 
-echo -e $WHITE_L Registrando Mensaje 1 en $BLUE HFLINES $NORMAL
+echo -e $WHITE_L Enviando Mensaje 1 en $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \
    -o $ORDERER_ORG1_ADDRESS \
@@ -11,16 +11,16 @@ peer chaincode invoke \
    --tls $CORE_PEER_TLS_ENABLED \
    --cafile $ORDERER_CA \
    -C mychannel \
-   -n chaincode \
+   -n hf2_chaincode \
    --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["registrarMensaje", "1", "Emisor mensaje 1","Subject mensaje 1", "Contenido texto mensaje 1","destinatario1@mensaje1.com, destinatario2@mensaje1.com, destinatario3@mensaje1.com"]}'
+   -c '{"Args":["enviarMensaje", "1", "Emisor mensaje 1","Asunto mensaje 1", "destinatario@mensaje1.com", "enCopia1@mensaje1.com, enCopia2@mensaje1.com","Contenido texto mensaje 1"]}'
    
 sleep 5
 
-echo -e $WHITE_L Imprimiendo mensaje 1 de $BLUE HFLINES $NORMAL
+echo -e $WHITE_L Mostrando mensaje 1 de $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \
    -o $ORDERER_ORG1_ADDRESS \
@@ -28,16 +28,16 @@ peer chaincode invoke \
    --tls $CORE_PEER_TLS_ENABLED \
    --cafile $ORDERER_CA \
    -C mychannel \
-   -n chaincode \
+   -n hf2_chaincode \
    --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["imprimirMensaje", "1"]}'
+   -c '{"Args":["verMensaje", "1"]}'
 
 sleep 5
 
-echo -e $WHITE_L Registrando Mensaje 2 en $BLUE HFLINES $NORMAL
+echo -e $WHITE_L Enviando Mensaje 2 en $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \
    -o $ORDERER_ORG1_ADDRESS \
@@ -45,16 +45,16 @@ peer chaincode invoke \
    --tls $CORE_PEER_TLS_ENABLED \
    --cafile $ORDERER_CA \
    -C mychannel \
-   -n chaincode \
+   -n hf2_chaincode \
    --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["registrarMensaje", "2", "Emisor mensaje 2","Subject mensaje 2", "Contenido texto mensaje 2","d1@gmail.com, d2@gmail.com, destinatario3@microsoft.es"]}'
+   -c '{"Args":["enviarMensaje", "2", "Emisor mensaje 2","Asunto mensaje 2", "destinatario@mensaje2.com", "enCopia1@mensaje2.com, enCopia2@mensaje2.com","Contenido texto mensaje 2"]}'
 
 sleep 5
 
-echo -e $WHITE_L Imprimiendo mensaje 2 de $BLUE HFLINES $NORMAL
+echo -e $WHITE_L Mostrando mensaje 2 de $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \
    -o $ORDERER_ORG1_ADDRESS \
@@ -62,16 +62,16 @@ peer chaincode invoke \
    --tls $CORE_PEER_TLS_ENABLED \
    --cafile $ORDERER_CA \
    -C mychannel \
-   -n chaincode \
+   -n hf2_chaincode \
    --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["imprimirMensaje", "2"]}'
+   -c '{"Args":["verMensaje", "2"]}'
 
 sleep 5
 
-echo -e $WHITE_L Registrando Mensaje 3 en $BLUE HFLINES $NORMAL
+echo -e $WHITE_L Enviando Mensaje 3 en $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \
    -o $ORDERER_ORG1_ADDRESS \
@@ -79,16 +79,15 @@ peer chaincode invoke \
    --tls $CORE_PEER_TLS_ENABLED \
    --cafile $ORDERER_CA \
    -C mychannel \
-   -n chaincode \
+   -n hf2_chaincode \
    --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["registrarMensaje", "3", "Emisor mensaje 3","Subject mensaje 3", "Contenido texto mensaje 3","destinatario1-m3.com, destinatario2@m3.com, destinatario3-m3.com"]}'
-
+   -c '{"Args":["enviarMensaje", "3", "Emisor mensaje 3","Asunto mensaje 3", "destinatario@mensaje3.com", "enCopia1@mensaje3.com, enCopia2@mensaje3.com","Contenido texto mensaje 3"]}'
 sleep 5
 
-echo -e $WHITE_L Imprimiendo mensaje 3 de $BLUE HFLINES $NORMAL
+echo -e $WHITE_L Mostrando mensaje 3 de $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \
    -o $ORDERER_ORG1_ADDRESS \
@@ -96,16 +95,16 @@ peer chaincode invoke \
    --tls $CORE_PEER_TLS_ENABLED \
    --cafile $ORDERER_CA \
    -C mychannel \
-   -n chaincode \
+   -n hf2_chaincode \
    --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["imprimirMensaje", "3"]}'
+   -c '{"Args":["verMensaje", "3"]}'
 
 sleep 5
 
-echo -e $WHITE_L Borrando mensaje 2 en $BLUE HFLINES $NORMAL
+echo -e $WHITE_L Eliminando mensaje 2 en $BLUE HFLINES $NORMAL
 
 peer chaincode invoke \
    -o $ORDERER_ORG1_ADDRESS \
@@ -113,16 +112,16 @@ peer chaincode invoke \
    --tls $CORE_PEER_TLS_ENABLED \
    --cafile $ORDERER_CA \
    -C mychannel \
-   -n chaincode \
+   -n hf2_chaincode \
    --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["borrarMensaje", "2"]}'
+   -c '{"Args":["eliminarMensaje", "2"]}'
 
 sleep 5
 
-echo -e $WHITE_L Listando todos los mensajes de $BLUE HFLINES $NORMAL
+echo -e $WHITE_L Listando todos los mensajes enviados en $BLUE HFLINES $NORMAL
 
    peer chaincode invoke \
    -o $ORDERER_ORG1_ADDRESS \
@@ -130,9 +129,9 @@ echo -e $WHITE_L Listando todos los mensajes de $BLUE HFLINES $NORMAL
    --tls $CORE_PEER_TLS_ENABLED \
    --cafile $ORDERER_CA \
    -C mychannel \
-   -n chaincode \
+   -n hf2_chaincode \
    --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["listarMensajes"]}'
+   -c '{"Args":["mostrarMensajes"]}'

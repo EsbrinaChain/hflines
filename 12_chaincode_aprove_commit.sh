@@ -5,7 +5,7 @@ source ./term-org1
 
 peer lifecycle chaincode checkcommitreadiness \
         --channelID mychannel \
-        --name hf2_chaincode \
+        --name chaincode \
         --version 1.0 \
         --sequence 1 \
         --output json 
@@ -15,7 +15,7 @@ peer lifecycle chaincode commit -o $ORDERER_ORG1_ADDRESS \
                                 --tls $CORE_PEER_TLS_ENABLED \
                                 --cafile $ORDERER_CA \
                                 --channelID mychannel \
-                                --name hf2_chaincode \
+                                --name chaincode \
                                 --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
                                 --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
                                 --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
@@ -23,4 +23,4 @@ peer lifecycle chaincode commit -o $ORDERER_ORG1_ADDRESS \
                                 --version 1.0 \
                                 --sequence 1
 
-peer lifecycle chaincode querycommitted --channelID mychannel --name hf2_chaincode
+peer lifecycle chaincode querycommitted --channelID mychannel --name chaincode

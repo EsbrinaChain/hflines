@@ -6,7 +6,7 @@
 
 source ./term-org2 
 
-peer lifecycle chaincode install hf2_chaincode.tar.gz \
+peer lifecycle chaincode install chaincode.tar.gz \
                          --peerAddresses $CORE_PEER_ADDRESS \
                          --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
 
@@ -18,7 +18,7 @@ peer lifecycle chaincode approveformyorg \
     --ordererTLSHostnameOverride orderer1-org2 \
     --tls --cafile $ORDERER_CA \
     --channelID mychannel \
-    --name hf2_chaincode \
+    --name chaincode \
     --version 1.0 \
     --package-id $1 \
     --sequence 1

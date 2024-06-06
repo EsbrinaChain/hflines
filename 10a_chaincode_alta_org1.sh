@@ -1,16 +1,16 @@
 # Muestra del parametro $1 
 # $1=./chcodes/hf1/build/install/hf1
 
-ruta_install=./chcodes/hf2/build/install/hf2
+ruta_install=./chcodes/chaincode/build/install/chaincode
 
 source ./term-org1
 
-peer lifecycle chaincode package hf2_chaincode.tar.gz \
+peer lifecycle chaincode package chaincode.tar.gz \
                --path $ruta_install \
                --lang java \
-               --label hf2_chaincode
+               --label chaincode
 
-peer lifecycle chaincode install hf2_chaincode.tar.gz \
+peer lifecycle chaincode install chaincode.tar.gz \
                --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
                --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
 

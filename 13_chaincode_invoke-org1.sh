@@ -16,8 +16,8 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["registrarMensaje", "1", "Emisor mensaje 1","Subject mensaje 1", "Contenido texto mensaje 1","destinatario1-mensaje1.com, destinatario2-mensaje1.com, destinatario3-mensaje1.com"]}'
-
+   -c '{"Args":["registrarMensaje", "1", "Emisor mensaje 1","Subject mensaje 1", "Contenido texto mensaje 1","destinatario1@mensaje1.com, destinatario2@mensaje1.com, destinatario3@mensaje1.com"]}'
+   -c '{"Args":["registrarJamon", "1", "Iberico","Bellota","Dehesa de Extremadura","Dehesa de Extremadura", "50"]}'
 sleep 5
 
 echo -e $WHITE_L Imprimiendo mensaje 1 de $BLUE HFLINES $NORMAL
@@ -50,7 +50,7 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["registrarMensaje", "2", "Emisor mensaje 2","Subject mensaje 2", "Contenido texto mensaje 2","destinatario1-mensaje2.com, destinatario2-mensaje2.com, destinatario3-mensaje2.com"]}'
+   -c '{"Args":["registrarMensaje", "2", "Emisor mensaje 2","Subject mensaje 2", "Contenido texto mensaje 2","d1@gmail.com, d2@gmail.com, destinatario3@microsoft.es"]}'
 
 sleep 5
 
@@ -84,7 +84,7 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["registrarMensaje", "3", "Emisor mensaje 3","Subject mensaje 3", "Contenido texto mensaje 3","destinatario1-mensaje3.com, destinatario2-mensaje3.com, destinatario3-mensaje3.com"]}'
+   -c '{"Args":["registrarMensaje", "3", "Emisor mensaje 3","Subject mensaje 3", "Contenido texto mensaje 3","destinatario1-m3.com, destinatario2@m3.com, destinatario3-m3.com"]}'
 
 sleep 5
 

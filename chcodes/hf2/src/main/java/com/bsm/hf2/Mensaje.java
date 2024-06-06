@@ -8,72 +8,64 @@ import java.util.List;
 import java.util.Objects;
 
 @DataType()
-public final class AssetJamon {
+public final class Mensaje {
 
     @Property()
     private final String id;
 
     @Property()
-    private final String raza;
+    private final String remitente;
 
     @Property()
-    private final String alimentacion;
+    private final String asunto;
 
     @Property()
-    private final String denominacionOrigen;
+    private final String receptor;
 
     @Property()
-    private final String propietario;
+    private final String enCopia;
 
     @Property()
-    private final String valor;
-
-    @Property()
-    private final List<String> intermediarios;
+    private final String texto;
 
 
-    public AssetJamon(@JsonProperty("id") final String id,
-                      @JsonProperty("raza") final String raza,
-                      @JsonProperty("alimentacion") final String alimentacion,
-                      @JsonProperty("denominacionOrigen") final String denominacionOrigen,
-                      @JsonProperty("propietario") final String propietario,
-                      @JsonProperty("valor") final String valor,
-                      @JsonProperty("intermediarios") final List<String> intermediarios) {
+
+    public Mensaje(@JsonProperty("id") final String id,
+                   @JsonProperty("remitente") final String remitente,
+                   @JsonProperty("asunto") final String asunto,
+                   @JsonProperty("receptor") final String receptor,
+                   @JsonProperty("enCopia") final String enCopia,
+                   @JsonProperty("texto") final String texto) {
         this.id = id;
-        this.raza = raza;
-        this.alimentacion = alimentacion;
-        this.denominacionOrigen = denominacionOrigen;
-        this.propietario = propietario;
-        this.valor = valor;
-        this.intermediarios = intermediarios;
+        this.remitente = remitente;
+        this.asunto = asunto;
+        this.receptor = receptor;
+        this.enCopia = enCopia;
+        this.texto = texto;
     }
 
     public String getId() {
         return id;
     }
 
-    public String getRaza() {
-        return raza;
+    public String getRemitente() {
+        return remitente;
     }
 
-    public String getAlimentacion() {
-        return alimentacion;
+    public String getAsunto() {
+        return asunto;
     }
 
-    public String getDenominacionOrigen() {
-        return denominacionOrigen;
+    public String getReceptor() {
+        return receptor;
     }
 
-    public String getPropietario() {
-        return propietario;
+    public String getEnCopia() {
+        return enCopia;
     }
 
-    public String getValor() {
-        return valor;
-    }
-
-    public List<String> getIntermediarios() {
-        return intermediarios;
+    public String getTexto() {
+        return texto;
     }
 
     @Override
@@ -86,21 +78,22 @@ public final class AssetJamon {
             return false;
         }
 
-        AssetJamon other = (AssetJamon) obj;
+        Mensaje other = (Mensaje) obj;
 
         return Objects.deepEquals(
-                new String[] {getId(), getRaza(), getAlimentacion(), getDenominacionOrigen(), getPropietario(), getValor(), getIntermediarios().toString()},
-                new String[] {other.getId(), other.getRaza(), other.getAlimentacion(), other.getDenominacionOrigen(), other.getPropietario(), other.getValor(), other.getIntermediarios().toString()});
+                new String[] {getId(), getRemitente(), getAsunto(), getReceptor(), getEnCopia(), getTexto()},
+                new String[] {other.getId(), other.getRemitente(), other.getAsunto(), other.getReceptor(), other.getEnCopia(), other.getTexto()});
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getRaza(), getAlimentacion(), getDenominacionOrigen(), getPropietario(), getValor(), getIntermediarios().toString());
+        return Objects.hash(getId(), getRemitente(), getAsunto(), getEnCopia(), getTexto());
     }
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "@" + Integer.toHexString(hashCode()) + " [id=" + id + ", raza="
-                + raza + ", alimentacion=" + alimentacion + ", denominacionOrigen=" + denominacionOrigen + ", propietario=" + propietario + ", valor=" + valor + ", intermediarios=" + intermediarios + "]";
+        return this.getClass().getSimpleName() + "@" + Integer.toHexString(hashCode()) + " [id=" + id + ", Remitente="
+                + remitente + ", Asunto=" + asunto + ", Receptor=" + receptor + ", enCopia=" + enCopia + ", texto="
+                + texto + "]";
     }
 }

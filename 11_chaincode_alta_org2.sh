@@ -4,9 +4,9 @@
 #          chaincode:8029661264f62c396e5c8086ff41d46ae9704cdeace463e1a1aebbf3df4c39e6 
 # Si no se pasa este parámetro se genera un error.
 
-source ./term-org2
+source ./term-org2 
 
-peer lifecycle chaincode install hflines_chaincode.tar.gz \
+peer lifecycle chaincode install hf1_chaincode.tar.gz \
                          --peerAddresses $CORE_PEER_ADDRESS \
                          --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
 

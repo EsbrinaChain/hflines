@@ -1,4 +1,4 @@
-package com.bsm.chaincode;
+package com.bsm.hf2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -16,107 +16,83 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Contract(
-        name = "JamonTransfer",
+        name = "MensajeOp",
         info = @Info(
-                title = "JamonTransfer contract",
-                description = "Chaincode para la transacción de jampones",
-                version = "0.0.1"))
+                title = "MensajeOp contract",
+                description = "Chaincode para la transacción de mensajes",
+                version = "1.0.0"))
 @Default
-public final class JamonTransfer implements ContractInterface {
+public final class MensajeOp implements ContractInterface {
 
     private final Genson genson = new Genson();
 
-    private enum JamonTransferErrors {
-        JAMON_NOT_FOUND,
-        JAMON_ALREADY_EXISTS
+    private enum MensajeOpErrors {
+        MENSAJE_NOT_FOUND,
+        MENSAJE_ALREADY_EXISTS
     }
 
     @Transaction(intent = Transaction.TYPE.SUBMIT)
-    public AssetJamon registrarJamon(final Context ctx, final String id, final String raza, final String alimentacion, final String denomOrig, final String owner, final String valor) {
+    public Mensaje enviarMensaje(final Context ctx, final String id, final String remitente,
+                                 final String asunto, final String receptor, final String enCopia,
+                                 final String texto) {
 
         ChaincodeStub stub = ctx.getStub();
 
         String state = stub.getStringState(id);
 
         if (!state.isEmpty()) {
-            String errorMessage = String.format("Jamon ya registrado", id);
+            String errorMessage = String.format("Mensaje con Id %s ya registrado", id);
             System.out.println(errorMessage);
-            throw new ChaincodeException(errorMessage, JamonTransferErrors.JAMON_ALREADY_EXISTS.toString());
+            throw new ChaincodeException(errorMessage, MensajeOpErrors.MENSAJE_ALREADY_EXISTS.toString());
         }
 
-        List<String> intermediarios = new ArrayList<>();
-        intermediarios.add(owner);
+        Mensaje msj = new Mensaje(id, remitente, asunto, receptor, enCopia, texto);
 
-        AssetJamon jamon = new AssetJamon(id, raza, alimentacion, denomOrig, owner, valor, intermediarios);
-
-        String newState = genson.serialize(jamon);
+        String newState = genson.serialize(msj);
 
         stub.putStringState(id, newState);
 
-        return jamon;
+        return msj;
     }
 
     @Transaction(intent = Transaction.TYPE.EVALUATE)
-    public AssetJamon imprimirJamon(final Context ctx, final String id) {
+    public Mensaje verMensaje(final Context ctx, final String id) {
         ChaincodeStub stub = ctx.getStub();
         String state = stub.getStringState(id);
 
         if (state.isEmpty() || state == null) {
-            String errorMessage = String.format("Jamon no registrado", id);
+            String errorMessage = String.format("Un mensaje con Id= %s no existe!", id);
             System.out.println(errorMessage);
-            throw new ChaincodeException(errorMessage, JamonTransferErrors.JAMON_NOT_FOUND.toString());
+            throw new ChaincodeException(errorMessage, MensajeOpErrors.MENSAJE_NOT_FOUND.toString());
         }
 
-        AssetJamon jamon = genson.deserialize(state, AssetJamon.class);
-        return jamon;
+        Mensaje msj = genson.deserialize(state, Mensaje.class);
+        return msj;
     }
 
     @Transaction(intent = Transaction.TYPE.SUBMIT)
-    public void borrarJamon(final Context ctx, final String id) {
+    public void eliminarMensaje(final Context ctx, final String id) {
         ChaincodeStub stub = ctx.getStub();
 
         String state = stub.getStringState(id);
 
         if (state.isEmpty() || state == null) {
-            String errorMessage = String.format("Jamon no registrado", id);
+            String errorMessage = String.format("Un mensaje con Id= %s no existe!", id);
             System.out.println(errorMessage);
-            throw new ChaincodeException(errorMessage, JamonTransferErrors.JAMON_NOT_FOUND.toString());
+            throw new ChaincodeException(errorMessage, MensajeOpErrors.MENSAJE_NOT_FOUND.toString());
         }
-
         stub.delState(id);
     }
 
-    @Transaction(intent = Transaction.TYPE.SUBMIT)
-    public String transferenciaJamon(final Context ctx, final String id, final String newOwner, final String newValue) {
-        ChaincodeStub stub = ctx.getStub();
-        String state = stub.getStringState(id);
-
-        if (state == null || state.isEmpty()) {
-            String errorMessage = String.format("Jamon no registrado", id);
-            System.out.println(errorMessage);
-            throw new ChaincodeException(errorMessage, JamonTransferErrors.JAMON_NOT_FOUND.toString());
-        }
-
-        AssetJamon asset = genson.deserialize(state, AssetJamon.class);
-        List<String> listaIntermediarios = asset.getIntermediarios();
-        listaIntermediarios.add(newOwner);
-
-        AssetJamon newAsset = new AssetJamon(asset.getId(), asset.getRaza(), asset.getAlimentacion(), asset.getDenominacionOrigen(), newOwner ,newValue, asset.getIntermediarios());
-        String sortedJson = genson.serialize(newAsset);
-        stub.putStringState(id, sortedJson);
-
-        return "Nuevo propietario: " + newOwner;
-    }
-
     @Transaction(intent = Transaction.TYPE.EVALUATE)
-    public String listarJamones(final Context ctx) {
+    public String mostrarMensajes(final Context ctx) {
         ChaincodeStub stub = ctx.getStub();
 
-        List<AssetJamon> queryResults = new ArrayList<AssetJamon>();
+        List<Mensaje> queryResults = new ArrayList<Mensaje>();
         QueryResultsIterator<KeyValue> results = stub.getStateByRange("", "");
 
         for (KeyValue result: results) {
-            AssetJamon asset = genson.deserialize(result.getStringValue(), AssetJamon.class);
+            Mensaje asset = genson.deserialize(result.getStringValue(), Mensaje.class);
             System.out.println(asset);
             queryResults.add(asset);
         }
@@ -125,9 +101,4 @@ public final class JamonTransfer implements ContractInterface {
 
         return response;
     }
-
-
-
-
-
 }

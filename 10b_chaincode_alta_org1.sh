@@ -1,3 +1,5 @@
+source ./term-org1
+
 peer lifecycle chaincode approveformyorg \
     -o $ORDERER_ORG1_ADDRESS \
     --ordererTLSHostnameOverride orderer1-org1 \

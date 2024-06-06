@@ -19,10 +19,10 @@ import java.util.List;
         name = "GestionMensaje",
         info = @Info(
                 title = "GestionMensaje contract",
-                description = "Chaincode para el envio de mensajes.",
+                description = "Chaincode para el envio de mensajes en la red fabric HFLines.",
                 version = "0.0.1"))
 @Default
-public class GestionMensaje implements ContractInterface{
+public final class GestionMensaje implements ContractInterface{
 
     private final Genson genson = new Genson();
 
@@ -34,7 +34,7 @@ public class GestionMensaje implements ContractInterface{
     @Transaction(intent = Transaction.TYPE.SUBMIT)
     public Mensaje registrarMensaje(final Context ctx, final String id,
                                     final String emisor, final String subject,
-                                    final String texto, final String destinat) {
+                                    final String texto, final String destinatarios) {
 
         ChaincodeStub stub = ctx.getStub();
 
@@ -46,7 +46,7 @@ public class GestionMensaje implements ContractInterface{
             throw new ChaincodeException(errorMessage, MensajeErrors.MENSAJE_ALREADY_EXISTS.toString());
         }
 
-        Mensaje Mensaje = new Mensaje(id, emisor, subject, texto, destinat);
+        Mensaje Mensaje = new Mensaje(id, emisor, subject, texto, destinatarios);
 
         String newState = genson.serialize(Mensaje);
 
@@ -60,14 +60,14 @@ public class GestionMensaje implements ContractInterface{
         ChaincodeStub stub = ctx.getStub();
         String state = stub.getStringState(id);
 
-        if (state.isEmpty() || state == null) {
+        if (state.isEmpty()) {
             String errorMessage = String.format("Mensaje %s no registrado", id);
             System.out.println(errorMessage);
             throw new ChaincodeException(errorMessage, MensajeErrors.MENSAJE_NOT_FOUND.toString());
         }
-
-        Mensaje Mensaje = genson.deserialize(state, Mensaje.class);
-        return Mensaje;
+        Mensaje msj = genson.deserialize(state, Mensaje.class);
+        
+        return msj;
     }
 
     @Transaction(intent = Transaction.TYPE.SUBMIT)
@@ -76,7 +76,7 @@ public class GestionMensaje implements ContractInterface{
 
         String state = stub.getStringState(id);
 
-        if (state.isEmpty() || state == null) {
+        if (state.isEmpty()) {
             String errorMessage = String.format("Mensaje %s no registrado", id);
             System.out.println(errorMessage);
             throw new ChaincodeException(errorMessage, MensajeErrors.MENSAJE_NOT_FOUND.toString());

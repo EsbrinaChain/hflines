@@ -22,25 +22,25 @@ public final class Mensaje {
     private final String texto;
 
     @Property()
-    private final String dest;
+    private final String destinatarios;
 
     public Mensaje(@JsonProperty("id") final String id,
                    @JsonProperty("emisor") final String emisor,
                    @JsonProperty("subject") final String subject,
                    @JsonProperty("texto") final String texto,
-                   @JsonProperty("dest") final String dest){
+                   @JsonProperty("destinatarios") final String destinatarios){
         this.id=id;
         this.emisor=emisor;
         this.subject=subject;
         this.texto=texto;
-        this.dest=dest;
+        this.destinatarios=destinatarios;
     }
 
     public String getId() { return id; }
     public String getEmisor() { return emisor; }
     public String getSubject() { return subject; }
     public String getTexto() { return texto; }
-    public String getDest() { return dest; }
+    public String getdestinatarios() { return destinatarios; }
 
     @Override
     public boolean equals(final Object obj) {
@@ -55,18 +55,18 @@ public final class Mensaje {
         Mensaje other = (Mensaje) obj;
 
         return Objects.deepEquals(
-                new String[] {getId(), getEmisor(), getSubject(), getTexto(), getDest()},
-                new String[] {other.getId(), other.getEmisor(), other.getSubject(), other.getTexto(), other.getDest()});
+                new String[] {getId(), getEmisor(), getSubject(), getTexto(), getdestinatarios()},
+                new String[] {other.getId(), other.getEmisor(), other.getSubject(), other.getTexto(), other.getdestinatarios()});
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getEmisor(), getSubject(), getTexto(), getDest());
+        return Objects.hash(getId(), getEmisor(), getSubject(), getTexto(), getdestinatarios());
     }
 
     @Override
     public String toString() {
         return this.getClass().getSimpleName() + "@" + Integer.toHexString(hashCode()) + " [id=" + id + ", emisor="
-                + emisor + ", subject=" + subject + ", texto=" + texto + ", destinatarios=" + dest + "]";
+                + emisor + ", subject=" + subject + ", texto=" + texto + ", destinatarios=" + destinatarios + "]";
     }
 }

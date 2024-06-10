@@ -16,7 +16,7 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["registrarJamon", "1", "Iberico","Bellota","Dehesa de Extremadura","Dehesa de Extremadura", "50"]}'
+   -c '{"Args":["registrarJamon", "35", "Iberico","Bellota","Dehesa de Extremadura","Dehesa de Extremadura", "50"]}'
    
 sleep 5
 
@@ -33,7 +33,7 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["imprimirJamon", "1"]}'
+   -c '{"Args":["imprimirJamon", "35"]}'
 
 
 

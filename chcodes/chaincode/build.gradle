@@ -26,7 +26,8 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.hyperledger.fabric-chaincode-java/fabric-chaincode-shim
 	implementation 'org.hyperledger.fabric-chaincode-java:fabric-chaincode-shim:2.5.0'
 	// https://mvnrepository.com/artifact/com.owlike/genson
-	implementation 'com.owlike:genson:1.5'
+	 implementation 'com.owlike:genson:1.5'
+	//implementation 'com.google.code.gson:gson:2.11.0'
 }
 
 tasks.named('test') {

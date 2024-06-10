@@ -22,7 +22,7 @@ import java.util.List;
                 description = "Chaincode para el envio de mensajes.",
                 version = "0.0.1"))
 @Default
-public class GestionMensaje implements ContractInterface{
+public final class GestionMensaje implements ContractInterface{
 
     private final Genson genson = new Genson();
 

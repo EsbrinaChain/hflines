@@ -4,7 +4,6 @@ import com.owlike.genson.annotation.JsonProperty;
 import org.hyperledger.fabric.contract.annotation.DataType;
 import org.hyperledger.fabric.contract.annotation.Property;
 
-import java.util.List;
 import java.util.Objects;
 
 @DataType
@@ -25,6 +24,12 @@ public final class Mensaje {
     @Property()
     private final String destinatarios;
 
+    public String getId() { return id; }
+    public String getEmisor() { return emisor; }
+    public String getSubject() { return subject; }
+    public String getDestinatarios() { return destinatarios; }
+    public String getTexto() { return texto; }
+
     public Mensaje(@JsonProperty("id") final String id,
                    @JsonProperty("emisor") final String emisor,
                    @JsonProperty("subject") final String subject,
@@ -36,12 +41,6 @@ public final class Mensaje {
         this.texto=texto;
         this.destinatarios=destinatarios;
     }
-
-    public String getId() { return id; }
-    public String getEmisor() { return emisor; }
-    public String getSubject() { return subject; }
-    public String getDestinatarios() { return destinatarios; }
-    public String getTexto() { return texto; }
 
     @Override
     public boolean equals(final Object obj) {

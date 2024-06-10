@@ -46,13 +46,13 @@ public final class JamonTransfer implements ContractInterface {
 
         List<String> intermediarios = new ArrayList<>();
         intermediarios.add(owner);
-
-        AssetJamon jamon = new AssetJamon(id, raza, alimentacion, denomOrig, owner, valor, intermediarios);
+        String id1=id+"0";
+        AssetJamon jamon = new AssetJamon(id1, raza, alimentacion, denomOrig, owner, valor, intermediarios);
 
         String newState = genson.serialize(jamon);
 
         stub.putStringState(id, newState);
-
+        System.out.println("JAMON REGISTRADO");
         return jamon;
     }
 

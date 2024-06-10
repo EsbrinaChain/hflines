@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="af7be3aa-0e5d-4cb4-bb83-8080c415d6d9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/10a_chaincode_alta_org1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/10a_chaincode_alta_org1.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10b_chaincode_alta_org1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/10b_chaincode_alta_org1.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11_chaincode_alta_org2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/11_chaincode_alta_org2.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12_chaincode_aprove_commit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/12_chaincode_aprove_commit.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chaincode.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/chaincode.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chcodes/chaincode/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/chcodes/chaincode/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chcodes/chaincode/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/chcodes/chaincode/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chcodes/chaincode/src/main/java/com/bsm/chaincode/JamonTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/chcodes/chaincode/src/main/java/com/bsm/chaincode/JamonTransfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chcodes/chaincode/src/main/java/com/bsm/chaincode/MensajeOp.java" beforeDir="false" afterPath="$PROJECT_DIR$/chcodes/chaincode/src/main/java/com/bsm/chaincode/MensajeOp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mychannel.block" beforeDir="false" afterPath="$PROJECT_DIR$/mychannel.block" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t.sh" beforeDir="false" afterPath="$PROJECT_DIR$/t.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/t1.sh" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2hh1CAuSluS0LEBwlBbxYma3MN9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/esbrinachain/fabric-samples/hflines"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af7be3aa-0e5d-4cb4-bb83-8080c415d6d9" name="Changes" comment="" />
+      <created>1718031365073</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718031365073</updated>
+    </task>
+    <servers />
+  </component>
+</project>

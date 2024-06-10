@@ -5,9 +5,9 @@ peer lifecycle chaincode approveformyorg \
     --ordererTLSHostnameOverride orderer1-org1 \
     --tls --cafile $ORDERER_CA \
     --channelID mychannel \
-    --name chaincode \
+    --name chaincode$1 \
     --version 1.0 \
-    --package-id $1 \
+    --package-id $2 \
     --sequence 1
     
     # $1 : hflines:c2066d1ea51ebe1c70db570860f9e56a064d13283729e43aae2eec04b33212a0

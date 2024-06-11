@@ -50,7 +50,7 @@ sleep 3
 echo -e $WHITE_L Ejemplo 7 - Mostra mensajes de un emisor $NORMAL
 echo -e $WHITE_L Visualizando Mensaje de Emisor: Maria Castillo $BLUE RED HFLINES $NORMAL
 
-./20_app05_enviadoPor.sh $1 "Maria Castillo"
+./20_app05_enviadosPor.sh $1 "Maria Castillo"
 
 sleep 3
 

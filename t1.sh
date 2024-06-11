@@ -16,7 +16,7 @@ peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG1 \
    --peerAddresses $CORE_PEER_ADDRESS_ORG2 \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
-   -c '{"Args":["eliminarMensaje", "102"]}'
+   -c '{"Args":["enviadosPor", "Juan Solana"]}'
    
 
 sleep 3

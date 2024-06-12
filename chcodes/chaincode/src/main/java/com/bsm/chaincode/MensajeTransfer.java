@@ -121,4 +121,41 @@ public final class MensajeTransfer implements ContractInterface {
         return response;
     }
 
+    @Transaction(intent = Transaction.TYPE.EVALUATE)
+    public String enviadosA(final Context ctx, String receptor){
+        ChaincodeStub stub = ctx.getStub();
+
+        List<Mensaje> queryResults = new ArrayList<>();
+        QueryResultsIterator<KeyValue> results = stub.getStateByRange("", "");
+
+        for (KeyValue result: results) {
+            Mensaje asset = genson.deserialize(result.getStringValue(), Mensaje.class);
+            String enviadoA = asset.getReceptor();
+            if (receptor.equals(enviadoA)) {
+                System.out.println(asset);
+                queryResults.add(asset);
+            }
+        }
+        final String response = genson.serialize(queryResults);
+        return response;
+    }
+
+    @Transaction(intent = Transaction.TYPE.EVALUATE)
+    public String buscarEnAsunto(final Context ctx, String txt){
+        ChaincodeStub stub = ctx.getStub();
+
+        List<Mensaje> queryResults = new ArrayList<>();
+        QueryResultsIterator<KeyValue> results = stub.getStateByRange("", "");
+
+        for (KeyValue result: results) {
+            Mensaje asset = genson.deserialize(result.getStringValue(), Mensaje.class);
+            String textoMensaje = asset.getTexto();
+            if (textoMensaje.toLowerCase().contains(txt.toLowerCase())) {
+                System.out.println(asset);
+                queryResults.add(asset);
+            }
+        }
+        final String response = genson.serialize(queryResults);
+        return response;
+    }
 }

@@ -1,19 +1,16 @@
 # Muestra para la ejecución de funciones del chaincode.
-# App1:  ./20_app_enviar_mensaje.sh $1 $2 $3 $4 $5 $6 $7
+# App02:  ./20_app02_eliminarMensaje.sh $1 $2
 
-# enviarMensaje 
-#               
-#               idMensaje $2="2"
-#                  Emisor $3="Emisor"
-#                  Asunto $4="Asunto" 
-#            Destinatario $5="destinatario", 
-#               Contenido $6="Contenido" 
-#                 enCopia $7="enCopias"
+# eliminarMensaje 
+
+#               $1=num. chaincode ej: 1 para usar chaincode1 si "" -> chaincode
+#     idMensaje $2="1"       
 
 . color.sh
 source ./term-org1
 
-echo -e $WHITE_L Enviado de Mensaje por $BLUE HFLINES $NORMAL
+echo -e $WHITE_L Eliminando Mensaje en $BLUE HFLINES $NORMAL
+echo ""
 
 printf -v param1 '{"Args":["eliminarMensaje","%s"]}' "$2"
 #echo $param1
@@ -31,12 +28,13 @@ op="peer chaincode invoke \
    --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE_ORG2 \
    -c '${param1}"
    
-   op="${op}'"
-   #printf -v op $op
-   
-   #echo op
-   
-   echo $op | bash
+op="${op}'"
+#printf -v op $op
+
+#echo op
+
+echo $op | bash
+echo ""
 
 
 

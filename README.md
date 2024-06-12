@@ -118,7 +118,7 @@ Toda la puesta en marcha está automatizada en el script
  Si queremos utilizar otro chaincode simplemente hay que cambiar esta
  ruta.
 
--   **10b_chaincode_alta_org1.sh**
+-   ${\LARGE\textrm{\color{royalblue}**10b_chaincode_alta_org1.sh**}}$.
 
  Este script, usa un parámetro de índice “1”, y como segundo parámetro
  el chaincodeID obtenido de la ejecución del script

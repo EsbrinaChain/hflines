@@ -56,7 +56,7 @@ En nuestro caso: Google cloud VM:
 
 -   Jq (jq-1.6)
 -   Fabric-samples (v 2.x):   
-            curl -sSL https://bit.ly/2ysbOFE \| bash -s
+        curl -sSL https://bit.ly/2ysbOFE \| bash -s
 
 Existe un script (**09_levantar_hflines.sh**) para crear la red Hyperledger fabric **HFLines** que automatiza la disponibilidad de:
 
@@ -65,18 +65,18 @@ Existe un script (**09_levantar_hflines.sh**) para crear la red Hyperledger fabr
   -   Levantar toda la arquitectura de contenedores para implementar la red Hyperledger Fabric HFLines. En este proyecto se decidido disponer de dos organizaciones **Org1** y **Org2** con los siguientes   contenedores:
 
 <img src="/img/contenedores.png" style="width:10cm;height:7cm" alt="Arquitectura" />
-<p align='justify'>
-   -   Se dispone de un canal en el cual se facilita a las dos organizaciones la posibilidad de ejecutar un chaincode.
 
-    Se monitoriza la red con:
+  -   Se dispone de un canal en el cual se facilita a las dos organizaciones la posibilidad de ejecutar un chaincode.
 
-          -   <b>Prometheus** (queries)</b>
-          -   <b>Grafana** (Gráficos)</b>
-</p>
+        Se monitoriza la red con:
+
+            **Prometheus** (queries)**<br>
+            **Grafana** (Gráficos)**
 
 <p align='justify'>
 Toda la puesta en marcha está automatizada en el script
-<b>09_levantar_hflines.sh</b>.</p>
+<b>09_levantar_hflines.sh</b>.
+</p>
 
 <p align='justify'> Para eliminar o dar de baja una red en funcionamiento, podemos ejecutar el
  script <b>08_eliminar_hflines.sh</b>.</p>

@@ -42,17 +42,11 @@ En nuestro caso: Google cloud VM:
 **Requisitos** previos al despliegue de **HFLINES** (las versiones son sólo orientativas, pero en nuestro caso no han presentado incompatibilidades):
 
 -   Curl (curl 7.81.0).
-
 -   Git (git version 2.34.1)
-
 -   Docker (Docker version 26.1.3, build b72abbb)
-
 -   Docker compose (Docker Compose version v2.27.0).
-
 -   Npm (8.5.1).
-
 -   Java
-
     -   openjdk version "21.0.3" 2024-04-16
     -   OpenJDK Runtime Environment (build
         21.0.3+9-Ubuntu-1ubuntu122.04.1)
@@ -63,10 +57,9 @@ En nuestro caso: Google cloud VM:
 -   Jq (jq-1.6)
 -   Fabric-samples (v 2.x):     curl -sSL https://bit.ly/2ysbOFE \| bash -s
 
-1.  Existe un script (<b>09_levantar_hflines.sh</b>) para crear la red Hyperledger fabric **HFLines**
-    que automatiza la disponibilidad de:
+Existe un script (**09_levantar_hflines.sh**) para crear la red Hyperledger fabric **HFLines** que automatiza la disponibilidad de:
 
-  -   Todo el **<u>material criptográfico</u>** para todos los componentes de red y usuarios.
+  -   Todo el **material criptográfico** para todos los componentes de red y usuarios.
 
   -   Levantar toda la arquitectura de contenedores para implementar la red Hyperledger Fabric HFLines. En este proyecto se decidido disponer de dos organizaciones **Org1** y **Org2** con los siguientes   contenedores:
 

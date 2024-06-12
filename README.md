@@ -147,7 +147,7 @@ comprobación del commit (querycommited) para el chaincode instalado en
 el canal 'mychannel' para el uso por las organizaciones **org1** y **org2**, una
 vez esté realizado el 'commit'. Todo el proceso lo automatiza el script:
 
--   12_chaincode_aprove_commit.sh
+-   **12_chaincode_aprove_commit.sh**
 
 Siguiendo el ejemplo actual ejecutaríamos:
 

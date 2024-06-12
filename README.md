@@ -21,7 +21,9 @@ ${\LARGE\textrm{\color{royalblue}un sistema de auditoria de comunicaciones entre
 <p>
 
 </p>
+
 ## PUESTA EN MARCHA de Hyperledger Fabric HFLines
+
 <p align='justify'>
 
 Para utilizar **HFLINES versión** y realizar su puesta en funcionamiento

@@ -2,6 +2,7 @@
 # Ejemplos de ejecución de las app que facilitan el uso 
 # de las funciones incluidas en el chaincode.
 
+clear
 . color.sh
 source ./term-org1
 

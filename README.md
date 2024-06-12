@@ -39,7 +39,7 @@ En nuestro caso: Google cloud VM:
 <img src="/img/VM.png" style="width:11cm;height:5cm" alt="Interfaz de usuario gráfica, Aplicación, Tabla Descripción generada automáticamente" />
 
 
-**Requisitos** previos al despliegue de **HFLINES** (las versiones son sólo orientativas, pero en nuestro caso no han presentado imcompatibilidades):
+**Requisitos** previos al despliegue de **HFLINES** (las versiones son sólo orientativas, pero en nuestro caso no han presentado incompatibilidades):
 
 -   Curl (curl 7.81.0).
 

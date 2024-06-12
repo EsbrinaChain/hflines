@@ -194,11 +194,11 @@ Plugin: vscc,**
 -   Siguiendo el actual ejemplo, la instrucción a ejecutar seria la
     siguiente:
 
- **./30_ejemplos_uso_20_app0x_org1.sh 1**
+     - <b>./30_ejemplos_uso_20_app0x_org1.sh 1</b>
 
- o
+      -  o
 
- **./30_ejemplos_uso_20_app0x_org2.sh 1**
+     - <b>./30_ejemplos_uso_20_app0x_org2.sh 1</b>
 
  Pero el índice variará según el chaincode registrado con
  **10a_chaincode_alta_org1.sh**.

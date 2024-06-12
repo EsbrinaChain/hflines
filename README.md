@@ -84,52 +84,53 @@ En nuestro caso: Google cloud VM:
 
  -   **Grafana** (Gráficos)
  </blockquote>
-</p>>
+</p>
 
-> Toda la puesta en marcha está automatizada en el script
-> **09_levantar_hflines.sh**.
->
-> Para eliminar o dar de baja una red ‘levantada’ podemos ejecutar el
-> script **08_eliminar_hflines.sh**.
->
-> Para visualizar la arquitetura de contenedores de la red ejecutar:
->
-> **docker ps --format 'table {{.Names}}\\t{{.ID}}\\t{{.State}}'**
->
-> Para una información más detallada:
->
-> **docker ps --format 'table
-> {{.Names}}\\t{{.ID}}\\t{{.State}}\\t{{.Ports}}'**
->
-> Para el despliegue de un chaincode en el canal ‘mychannel’ disponible
-> tanto para org1 como org2, usaremos una secuencia de scripts:
+<p align='justify'>
+Toda la puesta en marcha está automatizada en el script
+**09_levantar_hflines.sh**.</p>
+
+<p align='justify'> Para eliminar o dar de baja una red ‘levantada’ podemos ejecutar el
+ script **08_eliminar_hflines.sh**.</p>
+
+ Para visualizar la arquitetura de contenedores de la red ejecutar:
+
+ **docker ps --format 'table {{.Names}}\\t{{.ID}}\\t{{.State}}'**
+
+ Para una información más detallada:
+
+ **docker ps --format 'table
+ {{.Names}}\\t{{.ID}}\\t{{.State}}\\t{{.Ports}}'**
+
+ Para el despliegue de un chaincode en el canal ‘mychannel’ disponible
+ tanto para org1 como org2, usaremos una secuencia de scripts:
 
 -   10a_chaincode_alta_org1.sh
 
-> La ejecución seria:
->
-> **./10a_chaincode_alta_org1.sh 1**
->
-> el parametro 1 indica que se registrará el chaincode con el nombre
-> chaincode1, si 2 chaincode2 etc...
->
-> Internamente el script usa el chaincode existente en la carpeta:
->
-> **./chcodes/chaincode/build/install/chaincode**
->
-> ejemplo de resultado:
-> **chaincode1:c2066d1ea51ebe1c70db570860f9e56a064d13283729e43aae2eec04b33212a0**
->
-> Si queremos utilizar otro chaincode simplemente hay que cambiar esta
-> ruta.
+ La ejecución seria:
+
+ **./10a_chaincode_alta_org1.sh 1**
+
+ el parametro 1 indica que se registrará el chaincode con el nombre
+ chaincode1, si 2 chaincode2 etc...
+
+ Internamente el script usa el chaincode existente en la carpeta:
+
+ **./chcodes/chaincode/build/install/chaincode**
+
+ ejemplo de resultado:
+ **chaincode1:c2066d1ea51ebe1c70db570860f9e56a064d13283729e43aae2eec04b33212a0**
+
+ Si queremos utilizar otro chaincode simplemente hay que cambiar esta
+ ruta.
 
 -   **10b_chaincode_alta_org1.sh**
 
-> Este script, usa un parámetro de índice “1”, y como segundo parámetro
-> el chaincodeID obtenido de la ejecución del script
-> **10a_chaincode_alta_org1.sh**.
->
-> Siguiendo el ejemplo práctico actual ejecutaríamos:
+ Este script, usa un parámetro de índice “1”, y como segundo parámetro
+ el chaincodeID obtenido de la ejecución del script
+ **10a_chaincode_alta_org1.sh**.
+
+ Siguiendo el ejemplo práctico actual ejecutaríamos:
 
 **./10b_chaincode_alta_org1.sh 1**
 **chaincode1:c2066d1ea51ebe1c70db570860f9e56a064d13283729e43aae2eec04b33212a0**
@@ -139,10 +140,10 @@ el peer de org1 para el canal 'mychannel'.
 
 -   **11_chaincode_alta_org2.sh**
 
-> Realiza el alta ('install' y approveformyorg') del chaincode mediante
-> su chaincodeID en el peer de org2 para el canal 'mychannel'.
->
-> Siguiendo el procedimiento del ejemplo actual seria:
+ Realiza el alta ('install' y approveformyorg') del chaincode mediante
+ su chaincodeID en el peer de org2 para el canal 'mychannel'.
+
+ Siguiendo el procedimiento del ejemplo actual seria:
 
 **./11_chaincode_alta_org2.sh 1
 chaincode1:c2066d1ea51ebe1c70db570860f9e56a064d13283729e43aae2eec04b33212a0**
@@ -156,9 +157,9 @@ vez esté realizado el 'commit'. Todo el proceso lo automatiza el script:
 
 Siguiendo el ejemplo actual ejecutaríamos:
 
-> **./12_chaincode_aprove_commit.sh 1**
+ **./12_chaincode_aprove_commit.sh 1**
 
-Una vez finalizada esta ejecución el paquete-id \<chaincodeID>
+Una vez finalizada esta ejecución el paquete-id \<chaincodeID
 (chaincode1) ya está disponible.
 
 Veremos un mensaje similar a:
@@ -194,12 +195,12 @@ Plugin: vscc,**
 -   Siguiendo el actual ejemplo, la instrucción a ejecutar seria la
     siguiente:
 
-> **./30_ejemplos_uso_20_app0x_org1.sh 1**
->
-> o
->
-> **./30_ejemplos_uso_20_app0x_org2.sh 1**
->
-> Pero el índice variará según el chaincode registrado con
-> **10a_chaincode_alta_org1.sh**.
+ **./30_ejemplos_uso_20_app0x_org1.sh 1**
+
+ o
+
+ **./30_ejemplos_uso_20_app0x_org2.sh 1**
+
+ Pero el índice variará según el chaincode registrado con
+ **10a_chaincode_alta_org1.sh**.
 

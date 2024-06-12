@@ -158,4 +158,22 @@ public final class MensajeTransfer implements ContractInterface {
         final String response = genson.serialize(queryResults);
         return response;
     }
+
+    @Transaction(intent = Transaction.TYPE.SUBMIT)
+    public String eliminarTodosMensajes(final Context ctx) {
+
+        ChaincodeStub stub = ctx.getStub();
+        
+        List<String> eliminados = new ArrayList<>();
+        QueryResultsIterator<KeyValue> results = stub.getStateByRange("", "");
+
+        for (KeyValue result: results) {
+            Mensaje asset = genson.deserialize(result.getStringValue(), Mensaje.class);
+            String MensajeId = asset.getId();
+            stub.delState(MensajeId);
+            eliminados.add(MensajeId);
+        }
+        final String response = genson.serialize(eliminados);
+        return response;
+    }
 }

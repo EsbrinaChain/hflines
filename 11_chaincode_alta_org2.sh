@@ -1,7 +1,7 @@
 # La última ejecución de peer en '10_chaincode_alta_org1.sh', genera el parametro $1 
 # (ejemplo que varia por ser id de chaincode generado)
 # ejemplo exacto en formato: 
-#          chaincode:8029661264f62c396e5c8086ff41d46ae9704cdeace463e1a1aebbf3df4c39e6 
+#          chaincode1:8029661264f62c396e5c8086ff41d46ae9704cdeace463e1a1aebbf3df4c39e6 
 # Si no se pasa este parámetro se genera un error.
 
 source ./term-org2 

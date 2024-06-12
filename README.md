@@ -70,8 +70,8 @@ Existe un script (**09_levantar_hflines.sh**) para crear la red Hyperledger fabr
 
     Se monitoriza la red con:
 
-          -   **Prometheus** (queries)
-          -   **Grafana** (Gráficos)
+          -   <b>Prometheus** (queries)</b>
+          -   <b>Grafana** (Gráficos)</b>
 </p>
 
 <p align='justify'>

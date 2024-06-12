@@ -93,7 +93,7 @@ Toda la puesta en marcha está automatizada en el script
  Para el despliegue de un chaincode en el canal ‘mychannel’ disponible
  tanto para org1 como org2, usaremos una secuencia de scripts:
 
--   10a_chaincode_alta_org1.sh
+-   **10a_chaincode_alta_org1.sh**
 
  La ejecución seria:
 

@@ -19,22 +19,22 @@ ${\LARGE\textrm{\color{royalblue}un sistema de auditoria de comunicaciones entre
   <b>TLS-CA</b> : Entidad certificadora para el protocolo de transporte TLS. 
 </p>
 <p>
------------------------------------------------------------------------------------
-</p>
 
+</p>
+## PUESTA EN MARCHA de Hyperledger Fabric HFLines
 <p align='justify'>
-
-Modificación...
-
-</p>
 
 Para utilizar **HFLINES versión** y realizar su puesta en funcionamiento
 en pocos pasos seguiremos el siguiente **TUTORIAL** una vez clonado el
 proyecto en su máquina virtual.
 
+</p>
+
+
+
 En nuestro caso: Google cloud VM:
 
-<img src="/img/VM.png" style="width:9cm;height:4cm" alt="Interfaz de usuario gráfica, Aplicación, Tabla Descripción generada automáticamente" />
+<img src="/img/VM.png" style="width:11cm;height:5cm" alt="Interfaz de usuario gráfica, Aplicación, Tabla Descripción generada automáticamente" />
 
 
 **Requisitos** previos al despliegue de **HFLINES**:
@@ -59,13 +59,12 @@ En nuestro caso: Google cloud VM:
     -   \[Si se programa Chaincodes en Java, los contenedores Docker disponen JDK 11\]
 
 -   Jq (jq-1.6)
--   Fabric-samples (v 2.x):  curl -sSL https://bit.ly/2ysbOFE \| bash -s
+-   Fabric-samples (v 2.x):     curl -sSL https://bit.ly/2ysbOFE \| bash -s
 
 1.  Existe un script para crear la red Hyperledger fabric **HFLines**
     que automatiza la disponibilidad de:
 
--   Todo el **<u>material criptográfico</u>** para todos los componentes
-    > de red y usuarios.
+-   Todo el **<u>material criptográfico</u>** para todos los componentes de red y usuarios.
 
 -   Levantar toda la arquitectura de contenedores para implementar la
     > red Hyperledger Fabric HFLines. En este proyecto se decidido

@@ -153,34 +153,29 @@ Siguiendo el ejemplo actual ejecutaríamos:
 
  **./12_chaincode_aprove_commit.sh 1**
 
-Una vez finalizada esta ejecución el paquete-id \<chaincodeID
-(chaincode1) ya está disponible.
+Una vez finalizada esta ejecución el paquete-id <chaincodeID> (chaincode1) ya está disponible.
 
 Veremos un mensaje similar a:
 
-**Committed chaincode definition for chaincode 'chaincode1' on channel
-'mychannel':**
-
-**Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation
-Plugin: vscc,**
-
+**Committed chaincode definition for chaincode 'chaincode1' on channel 'mychannel':**
+**Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc,**
 **Approvals: \[org1MSP: true, org2MSP: true\]**
 
 -   Para ejecutar las funciones del chaincode, disponemos de los scripts
-    con prefijo '20_app0x':
+    con prefijo '**20_app0x**':
 
 -   Para aprender los parámetros que necesarios para su correcta
     ejecución disponemos de los scripts de ejemplos:
 
-    - <b>30_ejemplos_uso_20_app0x_org1.sh</b><br>
-    - <b>30_ejemplos_uso_20_app0x_org2.sh</b>
+    - **30_ejemplos_uso_20_app0x_org1.sh**<br>
+    - **30_ejemplos_uso_20_app0x_org2.sh**
 
 -   Se recomienda revisar el código para entender como se pueden usar
     individualmente cada uno de los scripts con prefijo '**20_app0x**'
     individualmente.
 
--   El primer script ejecuta los ejemplos como la organización org1 y el
-    segundo para la organización org2.
+-   El primer script ejecuta los ejemplos como la organización **org1** y el
+    segundo para la organización **org2**.
 
 -   Los dos script necesitan obligatoriamente que el primer parámetro
     sea el índice numérico usado para etiquetar el nombre del chaincode.
@@ -188,11 +183,11 @@ Plugin: vscc,**
 -   Siguiendo el actual ejemplo, la instrucción a ejecutar seria la
     siguiente:
 
-     - <b>./30_ejemplos_uso_20_app0x_org1.sh 1</b>
+     - **./30_ejemplos_uso_20_app0x_org1.sh 1**
 
         o bien
 
-     - <b>./30_ejemplos_uso_20_app0x_org2.sh 1</b>
+     - **./30_ejemplos_uso_20_app0x_org2.sh 1**
 
  El parámetro de índice variará según el que se haya usado al registrar el chaincode con
  **10a_chaincode_alta_org1.sh**.

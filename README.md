@@ -179,8 +179,8 @@ Plugin: vscc,**
     ejecución disponemos de los scripts de ejemplos:
 
 <blockquote>
-  <b>30_ejemplos_uso_20_app0x_org1.sh</b>
-  <b>30_ejemplos_uso_20_app0x_org2.sh</b>
+    <b>30_ejemplos_uso_20_app0x_org1.sh</b><br>
+    <b>30_ejemplos_uso_20_app0x_org2.sh</b>
 </blockquote>
 -   Se recomienda revisar el código para entender como se pueden usar
     individualmente cada uno de los scripts con prefijo '**20_app0x**'

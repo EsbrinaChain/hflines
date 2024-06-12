@@ -103,7 +103,7 @@ Toda la puesta en marcha está automatizada en el script
 
  La ejecución seria:
 
- **./10a_chaincode_alta_org1.sh 1**
+ -   **./10a_chaincode_alta_org1.sh 1**
 
  el parametro 1 indica que se registrará el chaincode con el nombre
  chaincode1, si 2 chaincode2 etc...
@@ -118,12 +118,12 @@ Toda la puesta en marcha está automatizada en el script
  Si queremos utilizar otro chaincode simplemente hay que cambiar esta
  ruta.
 
-**10b_chaincode_alta_org1.sh**
+-   **10b_chaincode_alta_org1.sh**
 
 
  Este script, usa un parámetro de índice “1”, y como segundo parámetro
  el chaincodeID obtenido de la ejecución del script
- **10a_chaincode_alta_org1.sh**.
+ -   **10a_chaincode_alta_org1.sh**.
 
  Siguiendo el ejemplo práctico actual ejecutaríamos (todo en la misma linea):
 

@@ -56,12 +56,10 @@ En nuestro caso: Google cloud VM:
         21.0.3+9-Ubuntu-1ubuntu122.04.1)
     -   OpenJDK 64-Bit Server VM (build 21.0.3+9-Ubuntu-1ubuntu122.04.1,
         mixed mode, sharing)
-    -   \[Hay que tener en cuenta que si se programa Chaincodes en Java,
-        los contenedores Docker disponen JDK 11\]
+    -   \[Si se programa Chaincodes en Java, los contenedores Docker disponen JDK 11\]
 
 -   Jq (jq-1.6)
--   Fabric-samples (v 2.x)
-       curl -sSL https://bit.ly/2ysbOFE \| bash -s
+-   Fabric-samples (v 2.x):  curl -sSL https://bit.ly/2ysbOFE \| bash -s
 
 1.  Existe un script para crear la red Hyperledger fabric **HFLines**
     que automatiza la disponibilidad de:

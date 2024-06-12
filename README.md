@@ -148,9 +148,9 @@ el peer de org1 para el canal 'mychannel'.
 **./11_chaincode_alta_org2.sh 1
 chaincode1:c2066d1ea51ebe1c70db570860f9e56a064d13283729e43aae2eec04b33212a0**
 
-A continuación se realiza para org1 el 'checkcommitreadiness','commit' y
+A continuación se realiza para **org1** el 'checkcommitreadiness','commit' y
 comprobación del commit (querycommited) para el chaincode instalado en
-el canal 'mychannel' para el uso por las organizaciones org1 y org2, una
+el canal 'mychannel' para el uso por las organizaciones **org1** y **org2**, una
 vez esté realizado el 'commit'. Todo el proceso lo automatiza el script:
 
 -   12_chaincode_aprove_commit.sh
@@ -178,10 +178,10 @@ Plugin: vscc,**
 -   Para aprender los parámetros que necesarios para su correcta
     ejecución disponemos de los scripts de ejemplos:
 
-**30_ejemplos_uso_20_app0x_org1.sh**
-
-**30_ejemplos_uso_20_app0x_org2.sh**.
-
+<blockquote>
+  <b>30_ejemplos_uso_20_app0x_org1.sh</b>
+  <b>30_ejemplos_uso_20_app0x_org2.sh</b>
+</blockquote>
 -   Se recomienda revisar el código para entender como se pueden usar
     individualmente cada uno de los scripts con prefijo '**20_app0x**'
     individualmente.

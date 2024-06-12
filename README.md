@@ -66,24 +66,18 @@ En nuestro caso: Google cloud VM:
 1.  Existe un script (<b>09_levantar_hflines.sh</b>) para crear la red Hyperledger fabric **HFLines**
     que automatiza la disponibilidad de:
 
--   Todo el **<u>material criptográfico</u>** para todos los componentes de red y usuarios.
+  -   Todo el **<u>material criptográfico</u>** para todos los componentes de red y usuarios.
 
--   Levantar toda la arquitectura de contenedores para implementar la
-    red Hyperledger Fabric HFLines. En este proyecto se decidido
-    disponer de dos organizaciones Org1 y Org2 con los siguientes
-    contenedores:
+  -   Levantar toda la arquitectura de contenedores para implementar la red Hyperledger Fabric HFLines. En este proyecto se decidido disponer de dos organizaciones **Org1** y **Org2** con los siguientes   contenedores:
 
 <img src="/img/contenedores.png" style="width:10cm;height:7cm" alt="Arquitectura" />
 <p align='justify'>
- Se dispone de un canal en el cual se facilita a las dos organizaciones
- la posibilidad de ejecutar un chaincode.
-<blockquote>
- Se monitoriza la red con:
+   -   Se dispone de un canal en el cual se facilita a las dos organizaciones la posibilidad de ejecutar un chaincode.
 
- -   **Prometheus** (queries)
+    Se monitoriza la red con:
 
- -   **Grafana** (Gráficos)
- </blockquote>
+          -   **Prometheus** (queries)
+          -   **Grafana** (Gráficos)
 </p>
 
 <p align='justify'>

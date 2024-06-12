@@ -34,7 +34,7 @@ proyecto en su máquina virtual.
 
 En nuestro caso: Google cloud VM:
 
-<img src="/img/VM.png" style="width:7cm;height:4cm" alt="Interfaz de usuario gráfica, Aplicación, Tabla Descripción generada automáticamente" />
+<img src="/img/VM.png" style="width:9cm;height:4cm" alt="Interfaz de usuario gráfica, Aplicación, Tabla Descripción generada automáticamente" />
 
 
 **Requisitos** previos al despliegue de **HFLINES**:

@@ -63,7 +63,7 @@ En nuestro caso: Google cloud VM:
 -   Jq (jq-1.6)
 -   Fabric-samples (v 2.x):     curl -sSL https://bit.ly/2ysbOFE \| bash -s
 
-1.  Existe un script para crear la red Hyperledger fabric **HFLines**
+1.  Existe un script (<b>09_levantar_hflines.sh</b>) para crear la red Hyperledger fabric **HFLines**
     que automatiza la disponibilidad de:
 
 -   Todo el **<u>material criptográfico</u>** para todos los componentes de red y usuarios.
@@ -88,10 +88,10 @@ En nuestro caso: Google cloud VM:
 
 <p align='justify'>
 Toda la puesta en marcha está automatizada en el script
-**09_levantar_hflines.sh**.</p>
+<b>09_levantar_hflines.sh</b>.</p>
 
-<p align='justify'> Para eliminar o dar de baja una red ‘levantada’ podemos ejecutar el
- script **08_eliminar_hflines.sh**.</p>
+<p align='justify'> Para eliminar o dar de baja una red en funcionamiento, podemos ejecutar el
+ script <b>08_eliminar_hflines.sh</b>.</p>
 
  Para visualizar la arquitetura de contenedores de la red ejecutar:
 

@@ -196,7 +196,7 @@ Plugin: vscc,**
 
      - <b>./30_ejemplos_uso_20_app0x_org1.sh 1</b>
 
-        o
+        o bien
 
      - <b>./30_ejemplos_uso_20_app0x_org2.sh 1</b>
 

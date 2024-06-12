@@ -164,7 +164,7 @@ Veremos un mensaje similar a:
 -   Para ejecutar las funciones del chaincode, disponemos de los scripts
     con prefijo '**20_app0x**':
 
--   Para aprender los parámetros que necesarios para su correcta
+-   Para aprender los parámetros que son necesarios para su correcta
     ejecución disponemos de los scripts de ejemplos:
 
     - **30_ejemplos_uso_20_app0x_org1.sh**<br>

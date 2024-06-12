@@ -21,9 +21,9 @@ ${\LARGE\textrm{\color{royalblue}un sistema de auditoria de comunicaciones entre
 <p>
 -----------------------------------------------------------------------------------
 </p>
-<p>
+
 ## Cómo utilizar este proyecto en una máquina virtual:
-</p>
+
 <p align='justify'>
 <blockquote>
 Versión 1.8:

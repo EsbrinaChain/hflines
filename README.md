@@ -56,7 +56,7 @@ En nuestro caso: Google cloud VM:
 
 -   Jq (jq-1.6)
 -   Fabric-samples (v 2.x):   
-       curl -sSL https://bit.ly/2ysbOFE \| bash -s
+            curl -sSL https://bit.ly/2ysbOFE \| bash -s
 
 Existe un script (**09_levantar_hflines.sh**) para crear la red Hyperledger fabric **HFLines** que automatiza la disponibilidad de:
 

@@ -130,7 +130,7 @@ Toda la puesta en marcha está automatizada en el script
  el chaincodeID obtenido de la ejecución del script
  **10a_chaincode_alta_org1.sh**.
 
- Siguiendo el ejemplo práctico actual ejecutaríamos:
+ Siguiendo el ejemplo práctico actual ejecutaríamos (todo en la misma linea):
 
 **./10b_chaincode_alta_org1.sh 1**
 **chaincode1:c2066d1ea51ebe1c70db570860f9e56a064d13283729e43aae2eec04b33212a0**

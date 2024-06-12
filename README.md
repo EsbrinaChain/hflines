@@ -69,9 +69,9 @@ En nuestro caso: Google cloud VM:
 -   Todo el **<u>material criptográfico</u>** para todos los componentes de red y usuarios.
 
 -   Levantar toda la arquitectura de contenedores para implementar la
-    > red Hyperledger Fabric HFLines. En este proyecto se decidido
-    > disponer de dos organizaciones Org1 y Org2 con los siguientes
-    > contenedores:
+    red Hyperledger Fabric HFLines. En este proyecto se decidido
+    disponer de dos organizaciones Org1 y Org2 con los siguientes
+    contenedores:
 
 <img src="/img/contenedores.png" style="width:10cm;height:7cm" alt="Arquitectura" />
 <p align='justify'>

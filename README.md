@@ -170,9 +170,8 @@ Veremos un mensaje similar a:
     - **30_ejemplos_uso_20_app0x_org1.sh**<br>
     - **30_ejemplos_uso_20_app0x_org2.sh**
 
--   Se recomienda revisar el código para entender como se pueden usar
-    individualmente cada uno de los scripts con prefijo '**20_app0x**'
-    individualmente.
+-   Se recomienda revisar su código, para entender como se pueden usar
+    individualmente cada uno de los scripts con prefijo '**20_app0x**'.
 
 -   El primer script ejecuta los ejemplos como la organización **org1** y el
     segundo para la organización **org2**.

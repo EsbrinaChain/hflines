@@ -157,8 +157,8 @@ Una vez finalizada esta ejecución el paquete-id <chaincodeID> (chaincode1) ya e
 
 Veremos un mensaje similar a:
 
-**Committed chaincode definition for chaincode 'chaincode1' on channel 'mychannel':**
-**Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc,**
+**Committed chaincode definition for chaincode 'chaincode1' on channel 'mychannel':**<br>
+**Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc,**<br>
 **Approvals: \[org1MSP: true, org2MSP: true\]**
 
 -   Para ejecutar las funciones del chaincode, disponemos de los scripts

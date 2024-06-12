@@ -25,7 +25,7 @@ ${\LARGE\textrm{\color{royalblue}un sistema de auditoria de comunicaciones entre
 ## Cómo utilizar este proyecto en una máquina virtual:
 
 <p align='justify'>
-<blockquote>
+
 Versión 1.8:
 
 1- Crea la red Hyperledger fabric HFLines: 
@@ -112,7 +112,6 @@ Versión 1.8:
      o 
      ./30_ejemplos_uso_20_app0x_org2.sh
 
-  </blockquote>
 </p>
 
 

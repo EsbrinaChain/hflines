@@ -72,25 +72,8 @@ En nuestro caso: Google cloud VM:
     > red Hyperledger Fabric HFLines. En este proyecto se decidido
     > disponer de dos organizaciones Org1 y Org2 con los siguientes
     > contenedores:
-<ul>
- <li>**Org1**:</li>
- <li>**Orderer** (1): orderer1-org1</li>
- <li>**Peer** (1): peer1-org1</li>
 
- <li>**CA** (1): rca-org1</li>
-</ul>
- <ul>**Org2**:
-
- <li>**Orderer** (1): orderer1-org2</li>
-
- <li>**Peer** (1): peer1-org2</li>
-
- <li>**CA** (1): rca-org2</li>
-
- <li>**Protocolo TLS**:</li>
-
- <li>**ca-tls** -> Emite certificados para org1 y org2.</li>
-</ul>
+<img src="/img/contenedores.png" style="width:8cm;height:8cm" alt="Arquitectura" />
 
 > Se dispone de un canal en el cual se facilita a las dos organizaciones
 > la posibilidad de ejecutar un chaincode.

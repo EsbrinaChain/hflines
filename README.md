@@ -77,12 +77,13 @@ En nuestro caso: Google cloud VM:
 <p align='justify'>
  Se dispone de un canal en el cual se facilita a las dos organizaciones
  la posibilidad de ejecutar un chaincode.
-
+<blockquote>
  Se monitoriza la red con:
 
- **Prometheus** (queries)
+ -   **Prometheus** (queries)
 
- **Grafana** (Gráficos)
+ -   **Grafana** (Gráficos)
+ </blockquote>
 </p>>
 
 > Toda la puesta en marcha está automatizada en el script

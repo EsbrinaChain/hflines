@@ -73,7 +73,7 @@ En nuestro caso: Google cloud VM:
     > disponer de dos organizaciones Org1 y Org2 con los siguientes
     > contenedores:
 
-<img src="/img/contenedores.png" style="width:8cm;height:8cm" alt="Arquitectura" />
+<img src="/img/contenedores.png" style="width:10cm;height:8cm" alt="Arquitectura" />
 
 > Se dispone de un canal en el cual se facilita a las dos organizaciones
 > la posibilidad de ejecutar un chaincode.

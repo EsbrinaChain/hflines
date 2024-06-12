@@ -74,16 +74,17 @@ En nuestro caso: Google cloud VM:
     > contenedores:
 
 <img src="/img/contenedores.png" style="width:10cm;height:7cm" alt="Arquitectura" />
+<p align='justify'>
+ Se dispone de un canal en el cual se facilita a las dos organizaciones
+ la posibilidad de ejecutar un chaincode.
 
-> Se dispone de un canal en el cual se facilita a las dos organizaciones
-> la posibilidad de ejecutar un chaincode.
->
-> Se monitoriza la red con:
->
-> **Prometheus** (queries)
->
-> **Grafana** (Gráficos)
->
+ Se monitoriza la red con:
+
+ **Prometheus** (queries)
+
+ **Grafana** (Gráficos)
+</p>>
+
 > Toda la puesta en marcha está automatizada en el script
 > **09_levantar_hflines.sh**.
 >

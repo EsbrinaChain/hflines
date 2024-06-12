@@ -200,6 +200,6 @@ Plugin: vscc,**
 
      - <b>./30_ejemplos_uso_20_app0x_org2.sh 1</b>
 
- Pero el índice variará según el chaincode registrado con
+ E parámetro de índice variará según el que se haya usado al registrar el chaincode con
  **10a_chaincode_alta_org1.sh**.
 

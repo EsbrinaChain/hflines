@@ -6,29 +6,44 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path="/Mensaje")
+@RequestMapping(path="/mensaje")
 @RequiredArgsConstructor
 public class MensajeController {
 
     private final MensajeService MensajeService;
 
-    @PostMapping(path = "/registrarMensaje")
-    public ResponseDTO registrarMensaje(@RequestBody RegistrarMensajeDTO dto) {
-        return MensajeService.registrarMensaje(dto.getMensajeId(), dto.getRaza(), dto.getAlimentacion(), dto.getDenomOrig(), dto.getOwner(), dto.getValor());}
+    @PostMapping(path = "/enviarMensaje")
+    public ResponseDTO enviarMensaje(@RequestBody EnviarMensajeDTO dto) {
+        return MensajeService.enviarMensaje(dto.getMensajeId(), dto.getEmisor(), dto.getAsunto(),
+                                            dto.getReceptor(), dto.getEnCopia(), dto.getTexto());}
 
-    @GetMapping(path = "/cargarMensaje")
-    public ResponseDTO cargarMensaje(@RequestParam String MensajeId) {
-        return MensajeService.cargarMensaje(MensajeId);}
+    @GetMapping(path = "/verMensaje")
+    public ResponseDTO verMensaje(@RequestParam String MensajeId) {
+        return MensajeService.verMensaje(MensajeId);}
 
-    @DeleteMapping(path = "/borrarMensaje")
-    public ResponseDTO borrarMensaje(@RequestParam String MensajeId) {
-        return MensajeService.borrarMensaje(MensajeId);}
+    @DeleteMapping(path = "/eliminarMensaje")
+    public ResponseDTO eliminarMensaje(@RequestParam String MensajeId) {
+        return MensajeService.eliminarMensaje(MensajeId);}
 
-    @PutMapping(path = "/transferenciaMensaje")
-    public ResponseDTO transferAsset(@RequestBody TransferMensajeDTO dto) {
-        return MensajeService.transferenciaMensaje(dto.getMensajeId(), dto.getNewOwner(), dto.getNewValue());}
+    @GetMapping(path = "/listarMensajes")
+    public ResponseDTO listarMensajes() {
+        return MensajeService.listarMensajes();}
 
-    @GetMapping(path = "/listarMensajees")
-    public ResponseDTO listarMensajees() {
-        return MensajeService.listarMensajees();}
+    @GetMapping(path = "/enviadosPor")
+    public ResponseDTO enviadosPor(@RequestParam String emisor) {
+        return MensajeService.enviadosPor(emisor);}
+
+    @GetMapping(path = "/enviadosA")
+    public ResponseDTO enviadosA(@RequestParam String receptor) {
+        return MensajeService.enviadosA(receptor);}
+
+    @GetMapping(path = "/buscarEnAsunto")
+    public ResponseDTO buscarEnAsunto(@RequestParam String txt) {
+        return MensajeService.buscarEnAsunto(txt); }
+
+    @DeleteMapping(path = "/eliminarTodosMensajes")
+    public ResponseDTO eliminarTodosMensaje() {
+        return MensajeService.eliminarTodosMensaje();}
+
+
 }

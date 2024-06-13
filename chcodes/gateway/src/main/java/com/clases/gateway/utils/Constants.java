@@ -18,7 +18,7 @@ public final class Constants {
     // Path to user private key directory.
     public static final Path KEY_DIR_PATH_ORG1 = CRYPTO_PATH_ORG1.resolve(Paths.get("/tmp/hyperledger/org1/ca/crypto/msp/keystore"));
     // Path to peer tls certificate.
-    public static final Path TLS_CERT_PATH_ORG1 = CRYPTO_PATH_ORG1.resolve(Paths.get("/tmp/hyperledger/org1/ca/crypto/tls-crt.pem"));
+    public static final Path TLS_CERT_PATH_ORG1 = CRYPTO_PATH_ORG1.resolve(Paths.get("/tmp/hyperledger/org1/ca/crypto/tls-cert.pem"));
 
     // Gateway peer end point.
     public static final String PEER_ENDPOINT_ORG1 = "localhost:7051";

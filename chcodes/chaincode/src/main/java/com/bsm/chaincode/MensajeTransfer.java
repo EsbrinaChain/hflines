@@ -149,8 +149,8 @@ public final class MensajeTransfer implements ContractInterface {
 
         for (KeyValue result: results) {
             Mensaje asset = genson.deserialize(result.getStringValue(), Mensaje.class);
-            String textoMensaje = asset.getTexto();
-            if (textoMensaje.toLowerCase().contains(txt.toLowerCase())) {
+            String textoAsunto = asset.getAsunto();
+            if (textoAsunto.toLowerCase().contains(txt.toLowerCase())) {
                 System.out.println(asset);
                 queryResults.add(asset);
             }

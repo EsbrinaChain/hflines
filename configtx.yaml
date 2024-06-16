@@ -85,7 +85,7 @@ Organizations:
                 Rule: "OR('org2MSP.peer')"
 
         OrdererEndpoints:
-            - orderer1-org2:7050
+            - orderer1-org2:8050
 
         AnchorPeers:
             # AnchorPeers defines the location of peers which can be used

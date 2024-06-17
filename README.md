@@ -61,9 +61,12 @@ Existe un script (**09_levantar_hflines.sh**) para crear la red Hyperledger fabr
 
   -   Todo el **material criptográfico** para todos los componentes de red y usuarios.
 
-  -   Levantar toda la arquitectura de contenedores para implementar la red Hyperledger Fabric HFLines. En este proyecto se decidido disponer de dos organizaciones **Org1** y **Org2** con los siguientes   contenedores:
+  -   Levantar toda la arquitectura de contenedores para implementar la red Hyperledger Fabric HFLines. En este proyecto se ha decidido disponer de dos organizaciones **Org1** y **Org2** con los siguientes contenedores:
 
-<p align="center"><img src="/img/orgs.png" style="width:15cm;height:9cm" alt="Arquitectura" /></p>
+<p align="center">
+  <img src="/img/orgs.png" style="width:15cm;height:9cm" alt="Arquitectura" />
+
+</p>
 
   -   Se dispone de un canal en el cual se facilita a las dos organizaciones la posibilidad de ejecutar un chaincode.
 

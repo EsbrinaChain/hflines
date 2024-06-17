@@ -206,7 +206,7 @@ Orderer: &OrdererDefaults
           ClientTLSCert: /tmp/hyperledger/org1/orderer1/tls-msp/signcerts/cert.pem
           ServerTLSCert: /tmp/hyperledger/org1/orderer1/tls-msp/signcerts/cert.pem
         - Host: orderer1-org2
-          Port: 7050
+          Port: 8050
           ClientTLSCert: /tmp/hyperledger/org2/orderer1/tls-msp/signcerts/cert.pem
           ServerTLSCert: /tmp/hyperledger/org2/orderer1/tls-msp/signcerts/cert.pem
 

@@ -1,5 +1,5 @@
 
-# HFLines - Proyecto Hyperledger Fabric - EBIS - QDJ
+# HFLines v2.0 - Proyecto Hyperledger Fabric - EBIS - QDJ
 
 HFLines es un proyecto que utiliza la tecnologia blockchain de Hyperledger Fabric para implementar 
 ${\LARGE\textrm{\color{royalblue}un sistema de auditoria de comunicaciones entre una UTE¹ de empresas}}$.

@@ -53,7 +53,6 @@ En nuestro caso: Google cloud VM:
     -   OpenJDK 64-Bit Server VM (build 21.0.3+9-Ubuntu-1ubuntu122.04.1,
         mixed mode, sharing)
     -   \[Si se programa Chaincodes en Java, los contenedores Docker disponen JDK 11\]
-
 -   Jq (jq-1.6)
 -   Fabric-samples (v 2.x):   
         curl -sSL https://bit.ly/2ysbOFE \| bash -s

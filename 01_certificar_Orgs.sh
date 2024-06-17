@@ -32,7 +32,7 @@ cp /tmp/hyperledger/org1/peer1/tls-msp/keystore/*_sk /tmp/hyperledger/org1/peer1
 echo -e $WHITE_L Emisión de certificado CA para $GREEN orderer1-org1$NORMAL!
 sleep 2
 
-# preparation
+# preparación
 mkdir -p /tmp/hyperledger/org1/orderer1/assets/ca 
 cp /tmp/hyperledger/org1/ca/admin/msp/cacerts/0-0-0-0-7054.pem /tmp/hyperledger/org1/orderer1/assets/ca/org1-ca-cert.pem
 
@@ -50,7 +50,7 @@ sleep 5
 echo -e $WHITE_L Emisión de certificado TLS para $GREEN orderer1-org1$NORMAL!
 sleep 2
 
-# for TLS
+# para TLS
 export FABRIC_CA_CLIENT_MSPDIR=tls-msp
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org1/orderer1/assets/tls-ca/tls-ca-cert.pem
 
@@ -121,14 +121,14 @@ cp /tmp/hyperledger/org2/peer1/tls-msp/keystore/*_sk /tmp/hyperledger/org2/peer1
 
 echo -e $WHITE_L Emisión de certificado CA para $GREEN orderer1-org2$NORMAL!
 sleep 2
-# preparation
+# preparación
 mkdir -p /tmp/hyperledger/org2/orderer1/assets/ca 
 cp /tmp/hyperledger/org2/ca/admin/msp/cacerts/0-0-0-0-7055.pem /tmp/hyperledger/org2/orderer1/assets/ca/org2-ca-cert.pem
 
 mkdir -p /tmp/hyperledger/org2/orderer1/assets/tls-ca 
 cp /tmp/hyperledger/tls-ca/admin/msp/cacerts/0-0-0-0-7052.pem /tmp/hyperledger/org2/orderer1/assets/tls-ca/tls-ca-cert.pem
 
-# for identity
+# para identidad
 export FABRIC_CA_CLIENT_HOME=/tmp/hyperledger/org2/orderer1
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org2/orderer1/assets/ca/org2-ca-cert.pem
 export FABRIC_CA_CLIENT_MSPDIR=msp
@@ -139,7 +139,7 @@ sleep 5
 echo -e $WHITE_L Emisión de certificado TLS para $GREEN orderer1-org2$NORMAL!
 sleep 2
 
-# for TLS
+# para TLS
 export FABRIC_CA_CLIENT_MSPDIR=tls-msp
 export FABRIC_CA_CLIENT_TLS_CERTFILES=/tmp/hyperledger/org2/orderer1/assets/tls-ca/tls-ca-cert.pem
 

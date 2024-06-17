@@ -26,7 +26,7 @@ ${\LARGE\textrm{\color{royalblue}un sistema de auditoria de comunicaciones entre
 
 <p align='justify'>
 
-Para utilizar **HFLINES versión** y realizar su puesta en funcionamiento
+Para utilizar **HFLINES v2.0** y realizar su puesta en funcionamiento
 en pocos pasos, seguiremos el siguiente **TUTORIAL** una vez clonado el
 proyecto en su máquina virtual.
 

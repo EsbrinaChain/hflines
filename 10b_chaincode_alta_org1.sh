@@ -1,13 +1,20 @@
+# Muestra del parametro $1 
+# $1=./chcodes/hf1/build/install/hf1
+
+# Ruta chaincode code compiled
+ruta_install=./chcodes/chaincode/build/install/chaincode
+
 source ./term-org1
 
-peer lifecycle chaincode approveformyorg \
-    -o $ORDERER_ORG1_ADDRESS \
-    --ordererTLSHostnameOverride orderer1-org1 \
-    --tls --cafile $ORDERER_CA \
-    --channelID mychannel \
-    --name chaincode$1 \
-    --version 1.0 \
-    --package-id $2 \
-    --sequence 1
-    
-    # $1 : chaincode1:c2066d1ea51ebe1c70db570860f9e56a064d13283729e43aae2eec04b33212a0
+peer lifecycle chaincode package chaincode.tar.gz \
+               --path $ruta_install \
+               --lang java \
+               --label chaincode$1
+
+peer lifecycle chaincode install chaincode.tar.gz \
+               --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
+               --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE
+
+peer lifecycle chaincode queryinstalled \
+               --peerAddresses $CORE_PEER_ADDRESS_ORG1 \
+               --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE

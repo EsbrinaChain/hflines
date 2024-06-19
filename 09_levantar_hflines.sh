@@ -279,7 +279,7 @@ sleep 4
 ## 03
 echo -e $WHITE_L Creando bloque génesis para el canal$NORMAL ...
 
-configtxgen -profile OrgsOrdererGenesis \
+configtxgen -profile SampleAppChannelEtcdRaft \
             -configPath ${PWD} \
             -outputBlock mychannel.block \
             -channelID mychannel
